@@ -1,0 +1,110 @@
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  font-family: "Rubik", sans-serif;
+  background: #F4F4F4;
+  width: 400px;
+  position: sticky;
+  top: 0;
+  height: 90vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+  box-shadow: 2px 10px 10px rgba(0, 0, 0, .5);
+  padding-bottom: 50px;
+  z-index: 100;
+}
+
+/* Wrapper de cada grupo (heading + itens) */
+.sidebar-group {
+  width: 100%;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #8A8888;
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Primeiro grupo ganha um respiro no topo */
+.sidebar-group:first-child {
+  margin-top: 25px;
+}
+
+.sidebar-heading {
+  display: flex;            
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #EBEBEB;
+  color: #301517;    
+  font-size: 17px;
+  padding: 10px 5%;           
+  border: 0;                  
+  cursor: pointer;
+  text-align: left;
+  transition: background-color .2s, color .2s;
+}
+
+.sidebar-heading:hover,
+.sidebar-group.open .sidebar-heading {
+  background-color: #3F1464;
+  color: #FFF;
+}
+
+.sidebar-heading:focus {
+  border: none;
+  outline: none;
+}
+
+.sidebar-heading > span {
+  width: 85%;
+}
+
+/* ---------- SETA ---------- */
+.sidebar-arrow {
+  transition: transform .25s ease;
+  /* por padrão já vem apontando pra baixo (keyboard_arrow_down) */
+}
+
+.sidebar-group.open .sidebar-arrow {
+  transform: rotate(-90deg);  /* vira pra "direita" quando aberto */
+}
+
+/* ---------- NAV DOS ITENS ---------- */
+.sidebar-itens {
+  display: none;              /* escondido por padrão */
+  background-color: #EBEBEB;
+  padding-bottom: 15px;
+}
+
+.sidebar-group.open .sidebar-itens {
+  display: block;             /* mostra quando o grupo tem .open */
+  background-color: #EDE5ED;
+}
+
+/* ---------- LISTA ---------- */
+.page-nav-list {
+  padding-left: 5%;
+  margin: 0;                  
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding-top: 15px;          
+}
+
+.page-nav-list > li {
+  list-style: none;
+}
+
+.page-nav-list > li > a {
+  color: #301517;
+  transition: ease .2s;
+}
+
+.page-nav-list > li > a:hover {
+  font-weight: bold;
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "title": "<strong>Aula 1</strong> • Conhecendo o GeoGebra",
+    "items": [
+      { "href": "#", "label": "1.1 Objetivo de aula" },
+      { "href": "#", "label": "1.2 Primeiro contato com o GeoGebra" },
+      { "href": "#", "label": "1.3 Acessando a calculadora gráfica" },
+      { "href": "#", "label": "1.4 Explorando a interface" },
+      { "href": "#", "label": "1.5 Salvando sua construção" },
+      { "href": "#", "label": "1.6 Explorando as ferramentas" },
+      { "href": "#", "label": "1.7 Utilizando o campo de entrada" },
+      { "href": "#", "label": "1.8 Síntese da aula" }
+    ]
+  },
+  {
+    "title": "<strong>Aula 2</strong> • Investigando relações trigonométricas",
+    "items": [
+  
+    ]
+  },
+  {
+    "title": "<strong>Aula 3</strong> • Limites do triângulo e a necessidade de ampliação",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 4</strong> • O círculo trigonométrico",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 5</strong> • A tangente no círculo trigonométrico",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 6</strong> • Medindo ângulos",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 7</strong> • Construindo o gráfico da função seno",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 8</strong> • Parâmetros da função seno",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 9</strong> • Construindo o gráfico da função cosseno",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 10</strong> • Parâmetros da função cosseno",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 11</strong> • Construindo o gráfico da função tangente",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 12</strong> • Função tangente com parâmetros",
+    "items": [
+      
+    ]
+  },
+  {
+    "title": "<strong>Aula 13</strong> • Modelagem Matemática - O Movimento Harmônico Simples",
+    "items": [
+      
+    ]
+  }
+]
+
