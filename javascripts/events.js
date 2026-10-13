@@ -56,7 +56,13 @@ $(document).ready(function(){
   const container = document.querySelector('#conteudoPrincipal > .container');
   const progressBar = document.querySelector('.progress-bar');
 
-  if (!container || !progressBar) return;
+  if (container && progressBar) {
+    container.addEventListener('scroll', () => {
+      const maxScroll = container.scrollHeight - container.clientHeight;
+      const progress = maxScroll > 0 ? (container.scrollTop / maxScroll) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    });
+  }
 
   container.addEventListener('scroll', () => {
     const maxScroll = container.scrollHeight - container.clientHeight;
@@ -64,4 +70,17 @@ $(document).ready(function(){
     progressBar.style.width = progress + '%';
   });
 
-})
+
+  //Sidebar — Botão hambúrguer (reabrir menu)
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const sidebarEl = document.getElementById('sidebar');
+
+  if (sidebarToggle && sidebarEl) {
+    sidebarToggle.addEventListener('click', () => {
+      sidebarEl.classList.remove('sidebar-hidden');
+      sidebarToggle.classList.remove('sidebar-toggle-visible');
+      sidebarToggle.setAttribute('aria-expanded', 'true');
+    });
+  }
+
+});

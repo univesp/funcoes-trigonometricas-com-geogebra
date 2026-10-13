@@ -26,11 +26,29 @@ a {
 }
 
 #conteudoPrincipal > .container {
-  flex: 1;               
-  overflow-y: auto;      
-  height: 100%;          
-  min-width: 0;          
-  max-width: 100% !important;  
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  min-width: 0;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* A seção tem o fundo (full width) */
+.secao-container {
+  /* cor de fundo de cada seção */
+ 
+}
+
+.secao-inicial {
+  background-color: #E7CAA2;
+}
+
+/* O conteúdo interno é quem respeita o espaço da sidebar */
+.section-conteudo {
+  padding-left: 500px;
+  padding-top: 100px;
 }
 
 .progress-bar {

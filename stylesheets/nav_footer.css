@@ -39,29 +39,44 @@ nav .nav-link[aria-expanded="true"] {
 
 /* FOOTER */
 /* Cores de fonte + contornos */
-/* footer, footer .sharing i {
-  color: red;
+footer {
+  font-size: .95rem;
+  color: #FFF;
+  background-color: #241B3A;
+  padding: 1rem 3rem;      /* respiro interno  */
+  padding-left: calc(460px + 3rem);  /* reserva espaço da sidebar */
+}
+
+/* Wrapper interno */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+footer .cred-rea, footer .aval-rea {
+  margin-left: 0 !important;
+}
+
+ footer, footer .sharing i {
+  color: #FFF;
 }
 footer .cred-rea>div:not(:first-child) {
-  border-left-color: red;
+  border-left-color: #FFF;
 }
 footer .aval-rea .btn-secondary {
-  border-color: red;
+  border-color: #FFF;
 }
 @media (max-width: 1199.98px) {
   footer .sharing i {
-    background-color: red;
-    color:  white;
+    background-color: #FFF;
+    color:  #241B3A;
   }
-} */
+} 
 footer .aval-rea .btn-secondary:hover,
 footer .aval-rea .btn-secondary:focus {}
 
-/* Cor do ícone de compartilhamento dentro dos círculos. Ajustar para mesma cor do fundo quando utilizado background diferente do padrão ou transparente. */
-/* @media (max-width: 1199.98px) {
-  footer .sharing i {
-    color:  red;
-  } */
 
 /* MAIN */
 main {
@@ -72,7 +87,7 @@ main {
 }
 @media only screen and (max-width: 992px) {
   main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

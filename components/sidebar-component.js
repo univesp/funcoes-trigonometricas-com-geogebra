@@ -6,7 +6,17 @@ async function renderSidebar(targetSelector) {
   const response = await fetch('data/sidebar-data.json');
   const lessons = await response.json();
 
-  // 2. Monta o HTML de cada grupo
+  // 2. Cabeçalho fixo no topo da sidebar
+  const headerHTML = `
+    <div class="sidebar-header">
+      <span class="sidebar-header-title">Conteúdo</span>
+      <button class="sidebar-close" type="button" aria-label="Fechar menu">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+  `;
+
+  // 3. Monta o HTML de cada grupo
   const groupsHTML = lessons.map((lesson) => {
     const itemsHTML = lesson.items.length
       ? lesson.items
@@ -29,11 +39,17 @@ async function renderSidebar(targetSelector) {
     `;
   }).join('');
 
-  // 3. Injeta no aside
-  container.innerHTML = groupsHTML;
+  // 4. Injeta cabeçalho + body (grupos) no aside
+  container.innerHTML = `
+    ${headerHTML}
+    <div class="sidebar-body">
+      ${groupsHTML}
+    </div>
+  `;
 
-  // 4. Ativa o comportamento de acordeão
+  // 5. Ativa os comportamentos
   attachAccordionBehavior();
+  attachSidebarClose();
 }
 
 function attachAccordionBehavior() {
@@ -54,5 +70,19 @@ function attachAccordionBehavior() {
         heading.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+}
+
+function attachSidebarClose() {
+  const closeBtn = document.querySelector('.sidebar-close');
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.getElementById('sidebar-toggle');
+
+  if (!closeBtn || !sidebar || !toggle) return;
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.add('sidebar-hidden');
+    toggle.classList.add('sidebar-toggle-visible');
+    toggle.setAttribute('aria-expanded', 'false');
   });
 }
