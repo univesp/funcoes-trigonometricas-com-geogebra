@@ -142,10 +142,16 @@ a {
 /* ---------- SEÇÕES DE CONTEÚDO GENÉRICAS ---------- */
 
 /* Corpo da seção (fundo lilás — envolve cabeçalho + conteúdo) */
-.secao-corpo {
-  background-color: #ECE8EC;
+.secao-lilas, .secao-rosa {
   padding-top: 60px;
   padding-bottom: 80px;
+}
+
+.secao-lilas {
+  background-color: #ECE8EC;
+}
+.secao-rosa {
+  background-color: #F8EEEA;
 }
 
 /* Cabeçalho de seção (título "Aula X" + subtítulo + divisor) */
@@ -162,7 +168,7 @@ a {
   line-height: 1.1;
 }
 
-.secao-corpo .secao-subtitulo {
+.secao-lilas .secao-subtitulo {
   font-family: "Rubik", sans-serif;
   font-size: 28px;
   font-weight: lighter;
@@ -185,8 +191,15 @@ a {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #3F1464;
   margin: 0 0 24px 0;
+}
+
+.secao-lilas .secao-subtitulo-pequeno {
+  color: #3F1464;
+}
+
+.secao-rosa .secao-subtitulo-pequeno {
+  color: #301517;
 }
 
 /* Parágrafos do corpo */
@@ -197,4 +210,145 @@ a {
   color: #301517;
   max-width: 750px;
   margin: 0 0 16px 0;
+}
+
+.link-textos {
+  color: #301517;
+}
+.link-textos:hover {
+  text-decoration: underline !important;
+  color: #301517;
+}
+
+/* ---------- FIGURAS COM MOLDURA ---------- */
+.secao-figura {
+  margin: 40px 0 60px 0;
+  max-width: 750px;   /* mesma largura máxima dos parágrafos */
+}
+
+.secao-figura-moldura {
+  background-color: #F6DCD2;   /* mesmo rosa do secao-rosa */
+  padding: 15px;               /* respiro interno entre a borda e a imagem */
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+.secao-figura img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);   /* sombra suave na imagem */
+}
+
+.secao-figura figcaption {
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  color: #301517;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+/* ---------- BLOCOS DE INFORMAÇÃO (ícone + barra lateral) ---------- */
+
+.bloco-info {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  padding: 24px 32px;
+  margin-top: 32px;
+  margin-left: 15px;
+  background-color: #FBFBF9;   /* fundo definido por você */
+  border-radius: 4px;
+  max-width: 750px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+}
+
+/* Barra colorida à direita */
+.bloco-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--bloco-cor, #3F1464);   /* cor via variável */
+}
+
+/* Ícone à esquerda */
+.bloco-info-icone {
+  position: absolute;
+  top: 18px;                      /* alinha com o topo do conteúdo */
+  left: -18px;                    /* metade pra fora do box */
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloco-info-icone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Corpo do bloco */
+.bloco-info-corpo {
+  flex: 1;
+  min-width: 0;
+}
+
+.bloco-info-titulo {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  color: var(--bloco-cor, #3F1464);   /* cor via variável */
+}
+
+.bloco-info-corpo p {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #301517;
+  margin: 0 0 12px 0;
+  max-width: none;
+}
+
+.bloco-info-corpo p:last-child {
+  margin-bottom: 0;
+}
+
+.bloco-info-corpo ul {
+  margin: 0;
+  padding-left: 20px;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #301517;
+}
+
+.bloco-info-corpo ul li {
+  margin-bottom: 4px;
+}
+
+.bloco-info-corpo ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- VARIAÇÕES DE COR (via variável CSS) ---------- */
+
+.bloco-info-observe {
+  --bloco-cor: #3F1464;
+}
+
+.bloco-info-atividade {
+  --bloco-cor: #641414;
+}
+
+.bloco-info-professor {
+  --bloco-cor: #145964;
 }

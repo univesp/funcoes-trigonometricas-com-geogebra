@@ -128,6 +128,8 @@ function attachSmoothScroll() {
   const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
   if (!scrollContainer) return;
 
+  const OFFSET = 60;
+
   document.querySelectorAll('.page-nav-list a').forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -140,7 +142,7 @@ function attachSmoothScroll() {
 
       // Rola suavemente dentro do container rolável
       scrollContainer.scrollTo({
-        top: target.offsetTop,
+        top: target.offsetTop - OFFSET,
         behavior: 'smooth',
       });
 
