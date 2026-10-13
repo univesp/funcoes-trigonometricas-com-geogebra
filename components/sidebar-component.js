@@ -47,9 +47,18 @@ async function renderSidebar(targetSelector) {
     </div>
   `;
 
-  // 5. Ativa os comportamentos
+  // 5. Abre o primeiro grupo por padrão (Aula 1)
+  const firstGroup = container.querySelector('.sidebar-group');
+  if (firstGroup) {
+    firstGroup.classList.add('open');
+    firstGroup.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
+  }
+
+  // 6. Ativa os comportamentos
   attachAccordionBehavior();
   attachSidebarClose();
+  attachSidebarInteractions();
+  attachHeadingTitleUpdate();
 }
 
 function attachAccordionBehavior() {
@@ -85,4 +94,121 @@ function attachSidebarClose() {
     toggle.classList.add('sidebar-toggle-visible');
     toggle.setAttribute('aria-expanded', 'false');
   });
+}
+
+// ============================================================
+// ATIVO: aplica a classe .ativo no item do menu correspondente
+// ============================================================
+
+function setActiveLink(link) {
+  // Remove de todos
+  document.querySelectorAll('.page-nav-list a').forEach((a) => {
+    a.classList.remove('ativo');
+  });
+  // Aplica no passado
+  if (link) link.classList.add('ativo');
+}
+
+// Atualiza Título da Página
+function attachHeadingTitleUpdate() {
+  document.querySelectorAll('.sidebar-heading').forEach((heading) => {
+    heading.addEventListener('click', () => {
+      const titleEl = heading.querySelector('span');
+      if (!titleEl) return;
+      document.title = titleEl.textContent.trim();
+    });
+  });
+}
+
+// ============================================================
+// SCROLL: quando clica em um item, rola até a seção
+// ============================================================
+
+function attachSmoothScroll() {
+  const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
+  if (!scrollContainer) return;
+
+  document.querySelectorAll('.page-nav-list a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      // Rola suavemente dentro do container rolável
+      scrollContainer.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth',
+      });
+
+      setActiveLink(link);
+
+    });
+  });
+}
+
+// ============================================================
+// SCROLL SPY: observa as seções e marca o item correspondente
+// ============================================================
+
+function attachScrollSpy() {
+  const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
+  if (!scrollContainer) return;
+
+  const links = Array.from(document.querySelectorAll('.page-nav-list a'));
+  const sections = links
+    .map((link) => {
+      const href = link.getAttribute('href');
+      return href && href !== '#' ? document.querySelector(href) : null;
+    })
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  // Recalcula o "ativo" toda vez que algo muda
+  const updateActive = () => {
+    const containerTop = scrollContainer.getBoundingClientRect().top;
+    // Linha de referência: 30% do topo da tela
+    const referenceLine = containerTop + scrollContainer.clientHeight * 0.3;
+
+    // Pega todas as seções com link cujo topo já passou da linha de referência
+    const passed = sections.filter((s) => s.getBoundingClientRect().top <= referenceLine);
+
+    if (!passed.length) {
+      // Nenhuma seção com link foi alcançada → remove todos os ativos
+      setActiveLink(null);
+      return;
+    }
+
+    // A última (mais próxima do topo) é a ativa
+    const current = passed[passed.length - 1];
+    const currentLink = links.find(
+      (l) => l.getAttribute('href') === `#${current.id}`
+    );
+    setActiveLink(currentLink);
+  };
+
+   // Throttle com requestAnimationFrame — roda no máximo 1x por frame
+   let rafId = null;
+   scrollContainer.addEventListener('scroll', () => {
+     if (rafId) return;
+     rafId = requestAnimationFrame(() => {
+       updateActive();
+       rafId = null;
+     });
+   });
+
+  updateActive(); // roda uma vez ao carregar
+}
+
+// ============================================================
+// Chama as funções depois de renderizar a sidebar
+// ============================================================
+
+function attachSidebarInteractions() {
+  attachSmoothScroll();
+  attachScrollSpy();
 }

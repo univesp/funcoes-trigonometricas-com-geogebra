@@ -35,20 +35,98 @@ a {
   padding-right: 0 !important;
 }
 
-/* A seção tem o fundo (full width) */
-.secao-container {
-  /* cor de fundo de cada seção */
- 
-}
-
+/* ---------- SEÇÃO INICIAL ---------- */
 .secao-inicial {
-  background-color: #E7CAA2;
+  background: linear-gradient(
+    to bottom,
+    #E8AFB9 0%,
+    #E8AFB9 10%,     
+    #EEEEE8 30%,    
+    #EEEEE8 100%
+  );
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 80px;
 }
 
-/* O conteúdo interno é quem respeita o espaço da sidebar */
+.secao-inicial-arte {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50%;
+  width: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Container geral do conteúdo (respeita a sidebar) */
 .section-conteudo {
-  padding-left: 500px;
-  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+  padding-left: 550px;
+  padding-top: 350px;
+}
+
+/* ---------- BLOCO DE TEXTO DA SEÇÃO INICIAL ---------- */
+.secao-inicial-conteudo {
+  max-width: 620px;   /* evita que o texto se estique demais em telas grandes */
+}
+
+.secao-inicial-titulo {
+  font-family: "Lato", sans-serif;
+  font-size: 45pt;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #3F1464;
+  margin: 0;
+  font-weight: bold;
+}
+
+.secao-inicial-divisor {
+  border: 0;
+  border-top: 2px solid #3F1464;
+  width: 450px;
+  margin: 40px 0 32px 0;
+}
+
+.secao-inicial-subtitulo {
+  font-family: "Rubik", sans-serif;
+  font-size: 25pt;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #301517;
+  margin: 0;
+}
+
+/* ---------- BLOCO DE DESTAQUE (barra lateral) ---------- */
+.bloco-destaque {
+  position: relative;
+  padding-left: 32px;          /* espaço entre a barra e o texto */
+  margin-top: 80px;            /* distância do subtítulo acima */
+  max-width: 60%;             /* ajuste conforme a largura que você quer */
+}
+
+.bloco-destaque::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;                  /* espessura da barra */
+  background-color: #3F1464;   
+}
+
+.bloco-destaque p {
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #301517;
+  margin: 0 0 16px 0;          /* respiro entre parágrafos */
+}
+
+.bloco-destaque p:last-child {
+  margin-bottom: 0;
 }
 
 .progress-bar {
@@ -59,4 +137,64 @@ a {
   width: 0%;
   background: #E7CAA2;
   transition: width .1s ease-out;
+}
+
+/* ---------- SEÇÕES DE CONTEÚDO GENÉRICAS ---------- */
+
+/* Corpo da seção (fundo lilás — envolve cabeçalho + conteúdo) */
+.secao-corpo {
+  background-color: #ECE8EC;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+/* Cabeçalho de seção (título "Aula X" + subtítulo + divisor) */
+.secao-cabecalho {
+  margin-bottom: 60px;   /* respiro entre o cabeçalho e o primeiro bloco de conteúdo */
+}
+
+.secao-titulo {
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #3F1464;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.secao-corpo .secao-subtitulo {
+  font-family: "Rubik", sans-serif;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #301517;
+  margin: 4px 0 0 0;
+  line-height: 1.2;
+}
+
+.secao-divisor {
+  border: 0;
+  border-top: 2px solid #3F1464;
+  width: 330px;
+  margin: 24px 0 0 0;
+}
+
+/* Subtítulo pequeno (ex: "1.1 Objetivo da aula") */
+.secao-subtitulo-pequeno {
+  font-family: "Rubik", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #3F1464;
+  margin: 0 0 24px 0;
+}
+
+/* Parágrafos do corpo */
+.secao-corpo p {
+  font-family: "Rubik", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #301517;
+  max-width: 750px;
+  margin: 0 0 16px 0;
 }

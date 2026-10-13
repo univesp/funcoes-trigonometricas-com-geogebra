@@ -2,14 +2,14 @@
   {
     "title": "<strong>Aula 1</strong> • Conhecendo o GeoGebra",
     "items": [
-      { "href": "#", "label": "1.1 Objetivo de aula" },
-      { "href": "#", "label": "1.2 Primeiro contato com o GeoGebra" },
-      { "href": "#", "label": "1.3 Acessando a calculadora gráfica" },
-      { "href": "#", "label": "1.4 Explorando a interface" },
-      { "href": "#", "label": "1.5 Salvando sua construção" },
-      { "href": "#", "label": "1.6 Explorando as ferramentas" },
-      { "href": "#", "label": "1.7 Utilizando o campo de entrada" },
-      { "href": "#", "label": "1.8 Síntese da aula" }
+      { "href": "#objetivo-aula", "label": "1.1 Objetivo de aula" },
+      { "href": "#primeiro-contato", "label": "1.2 Primeiro contato com o GeoGebra" },
+      { "href": "#calculadora-grafica", "label": "1.3 Acessando a calculadora gráfica" },
+      { "href": "#explorando-interface", "label": "1.4 Explorando a interface" },
+      { "href": "#salvando-construcao", "label": "1.5 Salvando sua construção" },
+      { "href": "#explorando-ferramentas", "label": "1.6 Explorando as ferramentas" },
+      { "href": "#campo-de-entrada", "label": "1.7 Utilizando o campo de entrada" },
+      { "href": "#sintese-aula", "label": "1.8 Síntese da aula" }
     ]
   },
   {

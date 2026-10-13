@@ -45,6 +45,11 @@ footer {
   background-color: #241B3A;
   padding: 1rem 3rem;      /* respiro interno  */
   padding-left: calc(460px + 3rem);  /* reserva espaço da sidebar */
+  transition: padding-left .3s ease;
+}
+
+body:has(.sidebar.sidebar-hidden) footer {
+  padding-left: 3rem;
 }
 
 /* Wrapper interno */
