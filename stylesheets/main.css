@@ -64,8 +64,8 @@ a {
 .section-conteudo {
   position: relative;
   z-index: 1;
-  padding-left: 550px;
   padding-top: 350px;
+  padding-left: 600px;
 }
 
 /* ---------- BLOCO DE TEXTO DA SEÇÃO INICIAL ---------- */
@@ -104,7 +104,7 @@ a {
   position: relative;
   padding-left: 32px;          /* espaço entre a barra e o texto */
   margin-top: 80px;            /* distância do subtítulo acima */
-  max-width: 60%;             /* ajuste conforme a largura que você quer */
+  max-width: 62%;             /* ajuste conforme a largura que você quer */
 }
 
 .bloco-destaque::before {
@@ -141,8 +141,8 @@ a {
 
 /* ---------- SEÇÕES DE CONTEÚDO GENÉRICAS ---------- */
 
-/* Corpo da seção (fundo lilás — envolve cabeçalho + conteúdo) */
-.secao-lilas, .secao-rosa {
+/* Corpo da seção */
+.secao-corpo {
   padding-top: 60px;
   padding-bottom: 80px;
 }
@@ -152,6 +152,9 @@ a {
 }
 .secao-rosa {
   background-color: #F8EEEA;
+}
+.secao-cinza {
+  background-color: #EEEEE8;
 }
 
 /* Cabeçalho de seção (título "Aula X" + subtítulo + divisor) */
@@ -194,7 +197,8 @@ a {
   margin: 0 0 24px 0;
 }
 
-.secao-lilas .secao-subtitulo-pequeno {
+.secao-lilas .secao-subtitulo-pequeno,
+.secao-cinza .secao-subtitulo-pequeno {
   color: #3F1464;
 }
 
@@ -207,7 +211,7 @@ a {
   font-family: "Rubik", sans-serif;
   font-size: 17px;
   line-height: 1.6;
-  color: #301517;
+  color: #060706;
   max-width: 750px;
   margin: 0 0 16px 0;
 }
@@ -243,7 +247,7 @@ a {
 .secao-figura figcaption {
   font-family: "Rubik", sans-serif;
   font-size: 15px;
-  color: #301517;
+  color: #060706;
   text-align: center;
   margin-top: 20px;
   font-weight: 400;
@@ -313,7 +317,7 @@ a {
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #301517;
+  color: #060706;
   margin: 0 0 12px 0;
   max-width: none;
 }
@@ -322,13 +326,14 @@ a {
   margin-bottom: 0;
 }
 
-.bloco-info-corpo ul {
+.bloco-info-corpo ul,
+.bloco-info-corpo ol {
   margin: 0;
   padding-left: 20px;
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #301517;
+  color: #060706;
 }
 
 .bloco-info-corpo ul li {
@@ -351,4 +356,37 @@ a {
 
 .bloco-info-professor {
   --bloco-cor: #145964;
+}
+
+/* ---------- BOTÃO DE NAVEGAÇÃO ENTRE SEÇÕES/AULAS ---------- */
+.secao-navegacao {
+  margin-top: 60px;
+  max-width: 750px;
+  display: flex;
+  justify-content: center;   /* centraliza o botão */
+}
+
+.btn-proximo {
+  display: inline-block;
+  background-color: #3F1464;
+  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 60px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color .2s ease, transform .1s ease;
+}
+
+.btn-proximo:hover {
+  background-color: #2D0E47;
+  color: #FFFFFF;
+  transform: translateY(-2px);   /* leve elevação */
+}
+
+.btn-proximo:active {
+  transform: translateY(0);   /* volta ao "clicar" */
 }
