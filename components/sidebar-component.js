@@ -54,11 +54,23 @@ async function renderSidebar(targetSelector) {
     firstGroup.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
   }
 
+  // 5.1 — Sidebar fechada por padrão em telas < 1400px
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.getElementById('sidebar-toggle');
+  const isLargeScreen = window.innerWidth >= 1400;
+
+  if (sidebar && toggle && !isLargeScreen) {
+    sidebar.classList.add('sidebar-hidden');
+    toggle.classList.add('sidebar-toggle-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
   // 6. Ativa os comportamentos
   attachAccordionBehavior();
   attachSidebarClose();
   attachSidebarInteractions();
   attachHeadingTitleUpdate();
+  attachResponsiveSidebar();
 }
 
 function attachAccordionBehavior() {
@@ -204,6 +216,36 @@ function attachScrollSpy() {
    });
 
   updateActive(); // roda uma vez ao carregar
+}
+
+// Fecha/abre a sidebar automaticamente quando cruza o breakpoint de 1400px
+function attachResponsiveSidebar() {
+  const BREAKPOINT = 1400;
+  let wasLarge = window.innerWidth >= BREAKPOINT;
+
+  window.addEventListener('resize', () => {
+    const isLarge = window.innerWidth >= BREAKPOINT;
+
+    // Só age quando CRUZA a linha (evita forçar estado a cada resize)
+    if (isLarge === wasLarge) return;
+    wasLarge = isLarge;
+
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('sidebar-toggle');
+    if (!sidebar || !toggle) return;
+
+    if (isLarge) {
+      // Passou pra tela grande → abre
+      sidebar.classList.remove('sidebar-hidden');
+      toggle.classList.remove('sidebar-toggle-visible');
+      toggle.setAttribute('aria-expanded', 'true');
+    } else {
+      // Passou pra tela pequena → fecha
+      sidebar.classList.add('sidebar-hidden');
+      toggle.classList.add('sidebar-toggle-visible');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // ============================================================

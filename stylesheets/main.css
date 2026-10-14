@@ -65,7 +65,7 @@ a {
   position: relative;
   z-index: 1;
   padding-top: 350px;
-  padding-left: 600px;
+  padding-left: 600px
 }
 
 /* ---------- BLOCO DE TEXTO DA SEÇÃO INICIAL ---------- */
@@ -389,4 +389,102 @@ a {
 
 .btn-proximo:active {
   transform: translateY(0);   /* volta ao "clicar" */
+}
+
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* --- Faixa 1200px – 1550px (desktop pequeno) --- */
+@media (max-width: 1550px) {
+
+  /* Padding-left do conteúdo — reduz porque a sidebar fica mais estreita */
+  .section-conteudo {
+    padding-left: 400px;
+  }
+
+  /* Seção inicial: padding-top menor */
+  .secao-inicial .section-conteudo {
+    padding-top: 250px;
+  }
+
+  /* Título e subtítulo da capa menores */
+  .secao-inicial-titulo {
+    font-size: 34pt;
+  }
+
+  .secao-inicial-subtitulo {
+    font-size: 20pt;
+  }
+
+  .secao-inicial-divisor {
+    width: 350px;
+    margin: 30px 0 24px 0;
+  }
+
+  /* Bloco de destaque da capa */
+  .bloco-destaque {
+    max-width: 75%;
+    margin-top: 60px;
+  }
+
+  /* Arte da seção inicial */
+  .secao-inicial-arte {
+    height: 35%;
+  }
+
+  /* Texto do corpo um pouco menor */
+  .secao-corpo p {
+    font-size: 16px;
+  }
+
+  /* Títulos internos um pouco menores */
+  .secao-subtitulo-pequeno {
+    font-size: 19px;
+  }
+
+  /* Blocos de info: fonte levemente menor */
+  .bloco-info-corpo p,
+  .bloco-info-corpo ul,
+  .bloco-info-corpo ol {
+    font-size: 15px;
+  }
+
+  /* Figuras com largura menor (já que a coluna encolheu) */
+  .secao-figura {
+    max-width: 700px;
+  }
+
+  .bloco-info {
+    max-width: 700px;
+  }
+
+  .secao-navegacao {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .secao-inicial-arte {
+    height: 25%;
+  }
+}
+
+@media (max-width: 1399px) {
+  .section-conteudo {
+    padding-left: 355px;
+  }
+}
+
+@media (max-width: 1299px) {
+  .section-conteudo {
+    padding-left: 300px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .section-conteudo {
+    padding-left: 260px;
+  }
 }

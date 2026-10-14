@@ -223,3 +223,15 @@
   font-weight: bold;
   color: #301517;
 }
+
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* --- Faixa 1200px – 1550px (desktop pequeno) --- */
+@media (max-width: 1550px) {
+  .sidebar {
+    width: 340px;
+  }
+}
