@@ -141,6 +141,10 @@ a {
 
 /* ---------- SEÇÕES DE CONTEÚDO GENÉRICAS ---------- */
 
+.lista-texto {
+  width: 50%;
+}
+
 /* Corpo da seção */
 .secao-corpo {
   padding-top: 60px;
@@ -479,7 +483,7 @@ a {
 
 @media (max-width: 1299px) {
   .section-conteudo {
-    padding-left: 300px;
+    padding-left: 290px;
   }
 }
 

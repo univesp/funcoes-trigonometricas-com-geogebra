@@ -83,6 +83,8 @@ footer .aval-rea .btn-secondary:hover,
 footer .aval-rea .btn-secondary:focus {}
 
 
+
+
 /* MAIN */
 main {
   /*
@@ -94,5 +96,55 @@ main {
   main {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  footer .aval-rea .btn-secondary:last-of-type {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1550px) {
+  nav .nav-link {
+    right: 180px;
+  }
+  nav .nav-link:focus,
+  nav .nav-link:hover,
+  nav .nav-link[aria-expanded="true"] {
+    right: 180px;
+  }
+}
+
+@media (max-width: 1200px) {
+  nav .nav-link {
+    right: 100px;
+  }
+  nav .nav-link:focus,
+  nav .nav-link:hover,
+  nav .nav-link[aria-expanded="true"] {
+    right: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .nav-link {
+    right: 60px;
+    top: 10%;
+  }
+  nav .nav-link:focus,
+  nav .nav-link:hover,
+  nav .nav-link[aria-expanded="true"] {
+    right: 60px;
+    top: 10%;
+  }
+}
+
+@media (max-width: 660px) {
+  nav .nav-link {
+    right: 25px;
+  }
+  nav .nav-link:focus,
+  nav .nav-link:hover,
+  nav .nav-link[aria-expanded="true"] {
+    right: 25px;
   }
 }

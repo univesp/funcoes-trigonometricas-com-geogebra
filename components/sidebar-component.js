@@ -2,11 +2,11 @@ async function renderSidebar(targetSelector) {
   const container = document.querySelector(targetSelector);
   if (!container) return;
 
-  // 1. Busca os dados do JSON
+  // Busca os dados do JSON
   const response = await fetch('data/sidebar-data.json');
   const lessons = await response.json();
 
-  // 2. Cabeçalho fixo no topo da sidebar
+  // Cabeçalho fixo no topo da sidebar
   const headerHTML = `
     <div class="sidebar-header">
       <span class="sidebar-header-title">Conteúdo</span>
@@ -16,7 +16,7 @@ async function renderSidebar(targetSelector) {
     </div>
   `;
 
-  // 3. Monta o HTML de cada grupo
+  // Monta o HTML de cada grupo
   const groupsHTML = lessons.map((lesson) => {
     const itemsHTML = lesson.items.length
       ? lesson.items
@@ -39,7 +39,7 @@ async function renderSidebar(targetSelector) {
     `;
   }).join('');
 
-  // 4. Injeta cabeçalho + body (grupos) no aside
+  // Injeta cabeçalho + body (grupos) no aside
   container.innerHTML = `
     ${headerHTML}
     <div class="sidebar-body">
@@ -47,14 +47,14 @@ async function renderSidebar(targetSelector) {
     </div>
   `;
 
-  // 5. Abre o primeiro grupo por padrão (Aula 1)
+  // Abre o primeiro grupo por padrão (Aula 1)
   const firstGroup = container.querySelector('.sidebar-group');
   if (firstGroup) {
     firstGroup.classList.add('open');
     firstGroup.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
   }
 
-  // 5.1 — Sidebar fechada por padrão em telas < 1400px
+  // Sidebar fechada por padrão em telas < 1400px
   const sidebar = document.getElementById('sidebar');
   const toggle = document.getElementById('sidebar-toggle');
   const isLargeScreen = window.innerWidth >= 1400;
@@ -65,7 +65,7 @@ async function renderSidebar(targetSelector) {
     toggle.setAttribute('aria-expanded', 'false');
   }
 
-  // 6. Ativa os comportamentos
+  // Ativa os comportamentos
   attachAccordionBehavior();
   attachSidebarClose();
   attachSidebarInteractions();

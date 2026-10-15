@@ -83,4 +83,42 @@ $(document).ready(function(){
     });
   }
 
+  // ============================================================
+  // SIDEBAR MOBILE — Overlay + clicar fora pra fechar
+  // ============================================================
+
+  // Cria o overlay (só uma vez)
+  const overlay = document.createElement('div');
+  overlay.className = 'sidebar-overlay';
+  document.body.appendChild(overlay);
+
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.getElementById('sidebar-toggle');
+
+  // Sincroniza o overlay com o estado da sidebar
+  function syncOverlay() {
+    if (!sidebar) return;
+    const isHidden = sidebar.classList.contains('sidebar-hidden');
+    if (isHidden) {
+      overlay.classList.remove('sidebar-overlay-visible');
+    } else {
+      overlay.classList.add('sidebar-overlay-visible');
+    }
+  }
+
+  // Toda vez que a sidebar muda de estado, sincroniza
+  if (sidebar && toggle) {
+    const observer = new MutationObserver(syncOverlay);
+    observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
+    syncOverlay(); // estado inicial
+  }
+
+  // Clicar no overlay fecha a sidebar
+  overlay.addEventListener('click', () => {
+    if (!sidebar || !toggle) return;
+    sidebar.classList.add('sidebar-hidden');
+    toggle.classList.add('sidebar-toggle-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+
 });

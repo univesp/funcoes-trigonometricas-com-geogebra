@@ -1,0 +1,333 @@
+/* ============================================================
+   MOBILE (< 1200px)
+   ============================================================ */
+
+   @media (max-width: 1199.98px) {
+
+    /* ----------------------------------------------------------
+       LAYOUT GERAL
+       ---------------------------------------------------------- */
+    #conteudoPrincipal {
+      padding-left: 0;   /* conteúdo ocupa toda a largura */
+    }
+
+    .secao-inicial {
+      min-height: 0;
+    }
+
+    .lista-texto {
+      width: 100%;
+    }
+    
+  
+    /* ----------------------------------------------------------
+       SIDEBAR 
+       ---------------------------------------------------------- */
+    .sidebar {
+      width: min(90%, 400px);   /* 90% da tela, no máx 400px */
+      top: 90px;
+      left: 15px;
+      bottom: 20px;
+      border-radius: 16px;
+    }
+  
+    /* ----------------------------------------------------------
+       BOTÃO SIDEBAR
+       ---------------------------------------------------------- */
+    .sidebar-toggle {
+      top: 100px;
+      left: 15px;
+      padding: 10px 12px;
+      border-radius: 8px;
+    }
+  
+    .sidebar-toggle .material-icons {
+      font-size: 26px;
+    }
+  
+    /* ----------------------------------------------------------
+       OVERLAY (conteúdo escurecido por baixo da sidebar aberta)
+       ---------------------------------------------------------- */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, .45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      z-index: 98;   /* abaixo da sidebar (100), acima do resto */
+    }
+  
+    .sidebar-overlay.sidebar-overlay-visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    /* ----------------------------------------------------------
+       CONTEÚDO:
+       ---------------------------------------------------------- */
+    .section-conteudo {
+      margin: 0 auto;        
+      padding-left: 135px;
+      padding-right: 170px;
+      padding-top: 60px;
+    }
+  
+    /* Elementos internos: ocupam toda a largura do bloco centralizado */
+    .secao-corpo p,
+    .secao-figura,
+    .secao-navegacao,
+    .bloco-destaque {
+      max-width: 100%;
+    }
+  
+    /* Bloco info mantém o offset do ícone */
+    .bloco-info {
+      max-width: 100%;
+      margin-left: 15px;
+    }
+  
+    /* ----------------------------------------------------------
+       SEÇÃO INICIAL
+       ---------------------------------------------------------- */
+    .secao-inicial .section-conteudo {
+      padding-top: 200px;   /* respiro pra arte de cima */
+    }
+  
+    .secao-inicial-arte {
+      height: 35%;
+      width: auto;
+      top: 0;
+    }
+  
+    .secao-inicial-titulo {
+      font-size: 28pt;
+    }
+  
+    .secao-inicial-subtitulo {
+      font-size: 16pt;
+    }
+  
+    .secao-inicial-divisor {
+      width: 100%;
+      max-width: 260px;
+      margin: 24px 0 20px 0;
+    }
+  
+    .bloco-destaque {
+      margin-top: 40px;
+      padding-left: 20px;
+    }
+  
+    .bloco-destaque::before {
+      width: 6px;
+    }
+  
+    .bloco-destaque p {
+      font-size: 15px;
+    }
+  
+    /* ----------------------------------------------------------
+       TIPOGRAFIA GERAL
+       ---------------------------------------------------------- */
+    .secao-corpo {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  
+    .secao-corpo p {
+      font-size: 15px;
+    }
+  
+    .secao-titulo {
+      font-size: 28px;
+    }
+  
+    .secao-lilas .secao-subtitulo {
+      font-size: 22px;
+    }
+  
+    .secao-divisor {
+      width: 260px;
+    }
+  
+    .secao-subtitulo-pequeno {
+      font-size: 17px;
+      letter-spacing: 0.4px;
+    }
+  
+    /* ----------------------------------------------------------
+       FIGURAS
+       ---------------------------------------------------------- */
+    .secao-figura {
+      margin: 30px 0 40px 0;
+    }
+  
+    .secao-figura-moldura {
+      padding: 10px;
+    }
+  
+    .secao-figura figcaption {
+      font-size: 13px;
+      margin-top: 14px;
+    }
+  
+    /* ----------------------------------------------------------
+       BLOCOS DE INFORMAÇÃO
+       ---------------------------------------------------------- */
+    .bloco-info {
+      padding: 20px 20px 20px 28px;   /* esquerda maior pro ícone */
+      gap: 16px;
+    }
+  
+    .bloco-info-icone {
+      top: 14px;
+      left: -15px;
+      width: 30px;
+      height: 30px;
+    }
+  
+    .bloco-info-titulo {
+      font-size: 16px;
+    }
+  
+    .bloco-info-corpo p,
+    .bloco-info-corpo ul,
+    .bloco-info-corpo ol {
+      font-size: 14px;
+    }
+  
+    /* ----------------------------------------------------------
+       BOTÃO DE NAVEGAÇÃO
+       ---------------------------------------------------------- */
+    .secao-navegacao {
+      margin-top: 40px;
+    }
+  
+    .btn-proximo {
+      padding: 14px 40px;
+      font-size: 14px;
+    }
+  
+    /* ----------------------------------------------------------
+       CABEÇALHO DA SIDEBAR
+       ---------------------------------------------------------- */
+    .sidebar-header {
+      padding: 12px 5%;
+    }
+  
+    .sidebar-header-title {
+      font-size: 18px;
+    }
+  
+    /* ----------------------------------------------------------
+       HEADINGS DA SIDEBAR
+       ---------------------------------------------------------- */
+    .sidebar-heading {
+      font-size: 15px;
+      padding: 12px 5%;
+    }
+  
+    /* ----------------------------------------------------------
+       FOOTER
+       ---------------------------------------------------------- */
+    footer {
+      padding: 1rem 1.5rem;
+      padding-left: 1.5rem;  
+      font-size: .85rem;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .footer-content .aval-rea {
+      flex-direction: column;
+      gap: .5rem;
+      width: 100%;
+    }
+  
+    .footer-content .aval-rea .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    .section-conteudo {
+      margin: 0 auto;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  
+    .secao-corpo p,
+    .secao-figura,
+    .secao-navegacao,
+    .bloco-destaque {
+      max-width: 100%;
+    }
+  
+    .bloco-info {
+      max-width: 100%;
+      margin-left: 15px;
+    }
+  }
+  
+  /* ============================================================
+     CELULARES PEQUENOS (< 480px)
+     ============================================================ */
+  @media (max-width: 479.98px) {
+  
+    .section-conteudo {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  
+    .secao-inicial-titulo {
+      font-size: 24pt;
+    }
+  
+    .secao-inicial-subtitulo {
+      font-size: 14pt;
+    }
+  
+    .secao-inicial .section-conteudo {
+      padding-top: 180px;
+    }
+  
+    .secao-inicial-arte {
+      height: 150px;
+    }
+  
+    .secao-titulo {
+      font-size: 24px;
+    }
+  
+    .secao-lilas .secao-subtitulo {
+      font-size: 19px;
+    }
+  
+    .secao-subtitulo-pequeno {
+      font-size: 15px;
+    }
+  
+    .secao-corpo p {
+      font-size: 14px;
+    }
+  
+    .bloco-info-corpo p,
+    .bloco-info-corpo ul,
+    .bloco-info-corpo ol {
+      font-size: 13px;
+    }
+  
+    .sidebar-toggle {
+      padding: 8px 10px;
+    }
+  
+    .sidebar-toggle .material-icons {
+      font-size: 22px;
+    }
+  }
