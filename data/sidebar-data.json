@@ -1,87 +1,185 @@
 [
   {
+    "aula": "aula-1",
     "title": "<strong>Aula 1</strong> • Conhecendo o GeoGebra",
     "items": [
-      { "href": "#objetivo-aula", "label": "1.1 Objetivo de aula" },
-      { "href": "#primeiro-contato", "label": "1.2 Primeiro contato com o GeoGebra" },
-      { "href": "#calculadora-grafica", "label": "1.3 Acessando a calculadora gráfica" },
-      { "href": "#explorando-interface", "label": "1.4 Explorando a interface" },
-      { "href": "#salvando-construcao", "label": "1.5 Salvando sua construção" },
-      { "href": "#explorando-ferramentas", "label": "1.6 Explorando as ferramentas" },
-      { "href": "#campo-de-entrada", "label": "1.7 Utilizando o campo de entrada" },
-      { "href": "#sintese-aula1", "label": "1.8 Síntese da aula" }
+      { "href": "#aula1-topico1", "label": "1.1 Objetivo da aula" },
+      { "href": "#aula1-topico2", "label": "1.2 Primeiro contato com o GeoGebra" },
+      { "href": "#aula1-topico3", "label": "1.3 Acessando a calculadora gráfica" },
+      { "href": "#aula1-topico4", "label": "1.4 Explorando a interface" },
+      { "href": "#aula1-topico5", "label": "1.5 Salvando sua construção" },
+      { "href": "#aula1-topico6", "label": "1.6 Explorando as ferramentas" },
+      { "href": "#aula1-topico7", "label": "1.7 Utilizando o campo de entrada" },
+      { "href": "#aula1-topico8", "label": "1.8 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-2",
     "title": "<strong>Aula 2</strong> • Investigando relações trigonométricas",
     "items": [
-  
+      { "href": "#aula2-topico1", "label": "2.1 Objetivo da aula" },
+      { "href": "#aula2-topico2", "label": "2.2 Construindo a situação no GeoGebra" },
+      { "href": "#aula2-topico3", "label": "2.3 Construção inicial" },
+      { "href": "#aula2-topico4", "label": "2.4 Identificando elementos do triângulo" },
+      { "href": "#aula2-topico5", "label": "2.5 Medindo segmentos" },
+      { "href": "#aula2-topico6", "label": "2.6 Explorando relacoes entre medidas" },
+      { "href": "#aula2-topico7", "label": "2.7 Investigação 1: Variação do tamanho do triângulo" },
+      { "href": "#aula2-topico8", "label": "2.8 Investigação 2: Variação do ângulo" },
+      { "href": "#aula2-topico9", "label": "2.9 Sistematizando as relações" },
+      { "href": "#aula2-topico10", "label": "2.10 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-3",
     "title": "<strong>Aula 3</strong> • Limites do triângulo e a necessidade de ampliação",
     "items": [
-      
+      { "href": "#aula3-topico1", "label": "3.1 Objetivo da aula" },
+      { "href": "#aula3-topico2", "label": "3.2 Revisitando as relações no triângulo" },
+      { "href": "#aula3-topico3", "label": "3.3 Variando o ângulo" },
+      { "href": "#aula3-topico4", "label": "3.4 Explorando novos ângulos" },
+      { "href": "#aula3-topico5", "label": "3.5 Um ponto importante" },
+      { "href": "#aula3-topico6", "label": "3.6 Refletindo sobre as limitações" },
+      { "href": "#aula3-topico7", "label": "3.7 Motivação para um novo modelo" },
+      { "href": "#aula3-topico8", "label": "3.8 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-4",
     "title": "<strong>Aula 4</strong> • O círculo trigonométrico",
     "items": [
-      
+      { "href": "#aula4-topico1", "label": "4.1 Objetivo da aula" },
+      { "href": "#aula4-topico2", "label": "4.2 Retomando a aula anterior" },
+      { "href": "#aula4-topico3", "label": "4.3 Construindo o círculo trigonométrico" },
+      { "href": "#aula4-topico4", "label": "4.4 Interpretando seno e cosseno" },
+      { "href": "#aula4-topico5", "label": "4.5 Explorando o movimento" },
+      { "href": "#aula4-topico6", "label": "4.6 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-5",
     "title": "<strong>Aula 5</strong> • A tangente no círculo trigonométrico",
     "items": [
-      
+      { "href": "#aula5-topico1", "label": "5.1 Objetivo da aula" },
+      { "href": "#aula5-topico2", "label": "5.2 Retomando a tangente no triângulo" },
+      { "href": "#aula5-topico3", "label": "5.3 Relacionando com seno e cosseno" },
+      { "href": "#aula5-topico4", "label": "5.4 Construindo a definição de tangente no círculo trigonométrico" },
+      { "href": "#aula5-topico5", "label": "5.5 Interpretando a construção" },
+      { "href": "#aula5-topico6", "label": "5.6 Explorando a variação da tangente" },
+      { "href": "#aula5-topico7", "label": "5.7 Relacionando com a tangente" },
+      { "href": "#aula5-topico8", "label": "5.8 Analisando o comportamento" },
+      { "href": "#aula5-topico9", "label": "5.9 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-6",
     "title": "<strong>Aula 6</strong> • Medindo ângulos",
     "items": [
-      
+      { "href": "#aula6-topico1", "label": "6.1 Objetivo da aula" },
+      { "href": "#aula6-topico2", "label": "6.2 Retomando as aulas anteriores" },
+      { "href": "#aula6-topico3", "label": "6.3 Relacionando ângulo e comprimento do arco" },
+      { "href": "#aula6-topico4", "label": "6.4 Construino o radiano" },
+      { "href": "#aula6-topico5", "label": "6.5 Compreendendo a volta completa" },
+      { "href": "#aula6-topico6", "label": "6.6 Sentido de percurso e valores negativos" },
+      { "href": "#aula6-topico7", "label": "6.7 Do arco ao número real" },
+      { "href": "#aula6-topico8", "label": "6.8 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-7",
     "title": "<strong>Aula 7</strong> • Construindo o gráfico da função seno",
     "items": [
-      
+      { "href": "#aula7-topico1", "label": "7.1 Objetivo da aula" },
+      { "href": "#aula7-topico2", "label": "7.2 Retomando a aula anterior" },
+      { "href": "#aula7-topico3", "label": "7.3 Relacionando o seno com a posição no círculo" },
+      { "href": "#aula7-topico4", "label": "7.4 Relacionando com o arco" },
+      { "href": "#aula7-topico5", "label": "7.5 Introduzindo o controle do arco" },
+      { "href": "#aula7-topico6", "label": "7.6 Construindo o gráfico da função seno" },
+      { "href": "#aula7-topico7", "label": "7.7 Interpretando o gráfico" },
+      { "href": "#aula7-topico8", "label": "7.8 Organizando as propriedades da função seno" },
+      { "href": "#aula7-topico9", "label": "7.9 Definindo a função seno" },
+      { "href": "#aula7-topico10", "label": "7.10 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-8",
     "title": "<strong>Aula 8</strong> • Parâmetros da função seno",
     "items": [
-      
+      { "href": "#aula8-topico1", "label": "8.1 Objetivo da aula" },
+      { "href": "#aula8-topico2", "label": "8.2 Retomando a aula anterior" },
+      { "href": "#aula8-topico3", "label": "8.3 Deslocament horizontal da função seno" },
+      { "href": "#aula8-topico4", "label": "8.4 Variação do período da função seno" },
+      { "href": "#aula8-topico5", "label": "8.5 Amplitude da função seno" },
+      { "href": "#aula8-topico6", "label": "8.6 Deslocamento vertical da função seno" },
+      { "href": "#aula8-topico7", "label": "8.7 Função seno com parâmetros" },
+      { "href": "#aula8-topico8", "label": "8.8 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-9",
     "title": "<strong>Aula 9</strong> • Construindo o gráfico da função cosseno",
     "items": [
-      
+      { "href": "#aula9-topico1", "label": "9.1 Objetivo da aula" },
+      { "href": "#aula9-topico2", "label": "9.2 Retomando a aula anterior" },
+      { "href": "#aula9-topico3", "label": "9.3 Relacionando o cosseno com a posição no círculo" },
+      { "href": "#aula9-topico4", "label": "9.4 Introduzindo o controle do arco" },
+      { "href": "#aula9-topico5", "label": "9.5 Construindo o gráfico da função cosseno" },
+      { "href": "#aula9-topico6", "label": "9.6 Interpretando o gráfico" },
+      { "href": "#aula9-topico7", "label": "9.7 Organizando as propriedades" },
+      { "href": "#aula9-topico8", "label": "9.8 Definindo a função cosseno" },
+      { "href": "#aula9-topico9", "label": "9.9 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-10",
     "title": "<strong>Aula 10</strong> • Parâmetros da função cosseno",
     "items": [
-      
+      { "href": "#aula10-topico1", "label": "10.1 Objetivo da aula" },
+      { "href": "#aula10-topico2", "label": "10.2 Retomando a aula anterior" },
+      { "href": "#aula10-topico3", "label": "10.3 Deslocamento horizontal da função seno" },
+      { "href": "#aula10-topico4", "label": "10.4 Variação do período da função seno" },
+      { "href": "#aula10-topico5", "label": "10.5 Amplitude da função seno" },
+      { "href": "#aula10-topico6", "label": "10.6 Deslocamento vertical da função seno" },
+      { "href": "#aula10-topico7", "label": "10.7 Função seno com parâmetros" },
+      { "href": "#aula10-topico8", "label": "10.8 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-11",
     "title": "<strong>Aula 11</strong> • Construindo o gráfico da função tangente",
     "items": [
-      
+      { "href": "#aula11-topico1", "label": "11.1 Objetivo da aula" },
+      { "href": "#aula11-topico2", "label": "11.2 Retomando a tangente no círculo trigonométrico" },
+      { "href": "#aula11-topico3", "label": "11.3 Construindo a tangente no círculo trigonométrico" },
+      { "href": "#aula11-topico4", "label": "11.4 Construindo o gráfico da função tangente" },
+      { "href": "#aula11-topico5", "label": "11.5 Organizando as propriedades" },
+      { "href": "#aula11-topico6", "label": "11.6 Definindo a função tangente" },
+      { "href": "#aula11-topico7", "label": "11.7 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-12",
     "title": "<strong>Aula 12</strong> • Função tangente com parâmetros",
     "items": [
-      
+      { "href": "#aula12-topico1", "label": "12.1 Objetivo da aula" },
+      { "href": "#aula12-topico2", "label": "12.2 Deslocamento horizontal da função tangente" },
+      { "href": "#aula12-topico3", "label": "12.3 Variação do período da função tangente" },
+      { "href": "#aula12-topico4", "label": "12.4 Inclinação do gráfico da função tangente" },
+      { "href": "#aula12-topico5", "label": "12.5 Deslocamento vertical da função tangente" },
+      { "href": "#aula12-topico6", "label": "12.6 Função tangente com parâmetros" },
+      { "href": "#aula12-topico7", "label": "12.7 Síntese da aula" }
     ]
   },
   {
+    "aula": "aula-13",
     "title": "<strong>Aula 13</strong> • Modelagem Matemática - O Movimento Harmônico Simples",
     "items": [
-      
+      { "href": "#aula13-topico1", "label": "13.1 Objetivo da aula" },
+      { "href": "#aula13-topico2", "label": "13.2 Cnotextualização: a matemática em movimento" },
+      { "href": "#aula13-topico3", "label": "13.3 Acessando a Simulação" },
+      { "href": "#aula13-topico4", "label": "13.4 Investigando a amplitude e a fase" },
+      { "href": "#aula13-topico5", "label": "13.5 Analisando posição, velocidade e aceleração" },
+      { "href": "#aula13-topico6", "label": "13.6 Refletindo sobre a modelagem" },
+      { "href": "#aula13-topico7", "label": "13.7 Síntese da aula" }
     ]
   }
 ]

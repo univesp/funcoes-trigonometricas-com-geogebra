@@ -1,3 +1,11 @@
+// ============================================================
+// SIDEBAR
+// ============================================================
+
+// Guarda referência aos listeners atuais pra poder removê-los depois
+let _scrollSpyAbortController = null;
+let _smoothScrollAbortController = null;
+
 async function renderSidebar(targetSelector) {
   const container = document.querySelector(targetSelector);
   if (!container) return;
@@ -5,6 +13,9 @@ async function renderSidebar(targetSelector) {
   // Busca os dados do JSON
   const response = await fetch('data/sidebar-data.json');
   const lessons = await response.json();
+
+  // Guarda as aulas no window (usado pelos cliques)
+  window._sidebarAulas = lessons.map((l) => l.aula);
 
   // Cabeçalho fixo no topo da sidebar
   const headerHTML = `
@@ -20,13 +31,16 @@ async function renderSidebar(targetSelector) {
   const groupsHTML = lessons.map((lesson) => {
     const itemsHTML = lesson.items.length
       ? lesson.items
-          .map((item) => `<li><a href="${item.href}">${item.label}</a></li>`)
+          .map((item) => {
+            // Cada item guarda a qual aula pertence
+            return `<li><a href="${item.href}" data-aula="${lesson.aula}">${item.label}</a></li>`;
+          })
           .join('')
       : '';
 
     return `
-      <div class="sidebar-group">
-        <button class="sidebar-heading" type="button" aria-expanded="false">
+      <div class="sidebar-group" data-aula="${lesson.aula}">
+        <button class="sidebar-heading" type="button" aria-expanded="false" data-aula="${lesson.aula}">
           <span>${lesson.title}</span>
           <i class="material-icons sidebar-arrow">arrow_drop_down</i>
         </button>
@@ -47,11 +61,17 @@ async function renderSidebar(targetSelector) {
     </div>
   `;
 
-  // Abre o primeiro grupo por padrão (Aula 1)
-  const firstGroup = container.querySelector('.sidebar-group');
-  if (firstGroup) {
-    firstGroup.classList.add('open');
-    firstGroup.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
+  // Abre o grupo da aula atual (padrão: Aula 1)
+  const aulaAtual = (window.carregarAula && getAulaAtualSalva()) || 'aula-1';
+  const grupoAtual = container.querySelector(`.sidebar-group[data-aula="${aulaAtual}"]`) 
+                     || container.querySelector('.sidebar-group');
+  if (grupoAtual) {
+    grupoAtual.classList.add('open');
+    grupoAtual.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
+
+    // Rola a sidebar pra mostrar o grupo aberto
+    // Usa setTimeout pra garantir que o layout já está pronto
+    setTimeout(() => scrollGrupoIntoView(grupoAtual), 150);
   }
 
   // Sidebar fechada por padrão em telas < 1400px
@@ -71,6 +91,15 @@ async function renderSidebar(targetSelector) {
   attachSidebarInteractions();
   attachHeadingTitleUpdate();
   attachResponsiveSidebar();
+  attachAulaClickHandlers();
+}
+
+function getAulaAtualSalva() {
+  try {
+    return localStorage.getItem('aulaAtual');
+  } catch (e) {
+    return null;
+  }
 }
 
 function attachAccordionBehavior() {
@@ -79,16 +108,17 @@ function attachAccordionBehavior() {
       const group = heading.closest('.sidebar-group');
       const wasOpen = group.classList.contains('open');
 
-      // Fecha todos
       document.querySelectorAll('.sidebar-group').forEach((g) => {
         g.classList.remove('open');
         g.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'false');
       });
 
-      // Abre só o clicado (se não estava aberto)
       if (!wasOpen) {
         group.classList.add('open');
         heading.setAttribute('aria-expanded', 'true');
+
+        // Rola a sidebar pra deixar o grupo visível
+        scrollGrupoIntoView(group);
       }
     });
   });
@@ -108,20 +138,13 @@ function attachSidebarClose() {
   });
 }
 
-// ============================================================
-// ATIVO: aplica a classe .ativo no item do menu correspondente
-// ============================================================
-
 function setActiveLink(link) {
-  // Remove de todos
   document.querySelectorAll('.page-nav-list a').forEach((a) => {
     a.classList.remove('ativo');
   });
-  // Aplica no passado
   if (link) link.classList.add('ativo');
 }
 
-// Atualiza Título da Página
 function attachHeadingTitleUpdate() {
   document.querySelectorAll('.sidebar-heading').forEach((heading) => {
     heading.addEventListener('click', () => {
@@ -133,10 +156,50 @@ function attachHeadingTitleUpdate() {
 }
 
 // ============================================================
-// SCROLL: quando clica em um item, rola até a seção
+// CLIQUE EM ITENS / HEADINGS -> CARREGA AULA
+// ============================================================
+
+function attachAulaClickHandlers() {
+
+  // Clique em um ITEM do menu (ex: "1.1 Objetivo de aula")
+  document.querySelectorAll('.page-nav-list a').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const aulaId = link.dataset.aula;
+      const href = link.getAttribute('href');
+
+      // Se a aula do item não é a atual, precisa carregar primeiro
+      const aulaAtual = document.getElementById('aula-container')?.dataset.aulaAtual;
+      if (aulaId && aulaId !== aulaAtual) {
+        e.preventDefault();
+        carregarAula(aulaId, { scrollTo: href });
+      }
+      // Se já é a aula atual, o attachSmoothScroll cuida de rolar
+    });
+  });
+
+  // Clique no TÍTULO do grupo (ex: "Aula 2") -> carrega a aula
+  document.querySelectorAll('.sidebar-heading').forEach((heading) => {
+    heading.addEventListener('click', () => {
+      const aulaId = heading.dataset.aula;
+      if (!aulaId) return;
+      const aulaAtual = document.getElementById('aula-container')?.dataset.aulaAtual;
+      if (aulaId !== aulaAtual) {
+        carregarAula(aulaId);
+      }
+    });
+  });
+}
+
+// ============================================================
+// SMOOTH SCROLL (re-chamável sem acumular listeners)
 // ============================================================
 
 function attachSmoothScroll() {
+  // Cancela listeners anteriores, se houver
+  if (_smoothScrollAbortController) _smoothScrollAbortController.abort();
+  _smoothScrollAbortController = new AbortController();
+  const signal = _smoothScrollAbortController.signal;
+
   const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
   if (!scrollContainer) return;
 
@@ -152,23 +215,25 @@ function attachSmoothScroll() {
 
       e.preventDefault();
 
-      // Rola suavemente dentro do container rolável
       scrollContainer.scrollTo({
         top: target.offsetTop - OFFSET,
         behavior: 'smooth',
       });
 
       setActiveLink(link);
-
-    });
+    }, { signal });
   });
 }
 
 // ============================================================
-// SCROLL SPY: observa as seções e marca o item correspondente
+// SCROLL SPY (re-chamável)
 // ============================================================
 
 function attachScrollSpy() {
+  if (_scrollSpyAbortController) _scrollSpyAbortController.abort();
+  _scrollSpyAbortController = new AbortController();
+  const signal = _scrollSpyAbortController.signal;
+
   const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
   if (!scrollContainer) return;
 
@@ -182,22 +247,17 @@ function attachScrollSpy() {
 
   if (!sections.length) return;
 
-  // Recalcula o "ativo" toda vez que algo muda
   const updateActive = () => {
     const containerTop = scrollContainer.getBoundingClientRect().top;
-    // Linha de referência: 30% do topo da tela
     const referenceLine = containerTop + scrollContainer.clientHeight * 0.3;
 
-    // Pega todas as seções com link cujo topo já passou da linha de referência
     const passed = sections.filter((s) => s.getBoundingClientRect().top <= referenceLine);
 
     if (!passed.length) {
-      // Nenhuma seção com link foi alcançada → remove todos os ativos
       setActiveLink(null);
       return;
     }
 
-    // A última (mais próxima do topo) é a ativa
     const current = passed[passed.length - 1];
     const currentLink = links.find(
       (l) => l.getAttribute('href') === `#${current.id}`
@@ -205,28 +265,29 @@ function attachScrollSpy() {
     setActiveLink(currentLink);
   };
 
-   // Throttle com requestAnimationFrame — roda no máximo 1x por frame
-   let rafId = null;
-   scrollContainer.addEventListener('scroll', () => {
-     if (rafId) return;
-     rafId = requestAnimationFrame(() => {
-       updateActive();
-       rafId = null;
-     });
-   });
+  let rafId = null;
+  scrollContainer.addEventListener('scroll', () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      updateActive();
+      rafId = null;
+    });
+  }, { signal });
 
-  updateActive(); // roda uma vez ao carregar
+  // Executa com um pequeno atraso pra dar tempo do layout assentar
+setTimeout(updateActive, 500);
 }
 
-// Fecha/abre a sidebar automaticamente quando cruza o breakpoint de 1400px
+// ============================================================
+// RESPONSIVE SIDEBAR (auto abre/fecha ao cruzar 1400px)
+// ============================================================
+
 function attachResponsiveSidebar() {
   const BREAKPOINT = 1400;
   let wasLarge = window.innerWidth >= BREAKPOINT;
 
   window.addEventListener('resize', () => {
     const isLarge = window.innerWidth >= BREAKPOINT;
-
-    // Só age quando CRUZA a linha (evita forçar estado a cada resize)
     if (isLarge === wasLarge) return;
     wasLarge = isLarge;
 
@@ -235,12 +296,10 @@ function attachResponsiveSidebar() {
     if (!sidebar || !toggle) return;
 
     if (isLarge) {
-      // Passou pra tela grande → abre
       sidebar.classList.remove('sidebar-hidden');
       toggle.classList.remove('sidebar-toggle-visible');
       toggle.setAttribute('aria-expanded', 'true');
     } else {
-      // Passou pra tela pequena → fecha
       sidebar.classList.add('sidebar-hidden');
       toggle.classList.add('sidebar-toggle-visible');
       toggle.setAttribute('aria-expanded', 'false');
@@ -248,11 +307,56 @@ function attachResponsiveSidebar() {
   });
 }
 
-// ============================================================
-// Chama as funções depois de renderizar a sidebar
-// ============================================================
+/**
+ * Rola o sidebar-body pra deixar o grupo clicado visível.
+ */
+function scrollGrupoIntoView(group) {
+  if (!group) return;
+
+  const body = group.closest('.sidebar-body');
+  if (!body) return;
+
+  // Adia a medição até o navegador ter aplicado o .open e recalculado o layout
+  requestAnimationFrame(() => {
+    const RESP = 20;
+    const bodyRect = body.getBoundingClientRect();
+    const groupRect = group.getBoundingClientRect();
+
+    // Se ainda mediu 0, tenta de novo no próximo frame
+    if (groupRect.height === 0 || bodyRect.height === 0) {
+      requestAnimationFrame(() => scrollGrupoIntoView(group));
+      return;
+    }
+
+    // Se o grupo está acima do topo visível
+    if (groupRect.top < bodyRect.top + RESP) {
+      const diferenca = groupRect.top - bodyRect.top - RESP;
+      body.scrollTo({
+        top: body.scrollTop + diferenca,
+        behavior: 'smooth',
+      });
+      return;
+    }
+
+    // Se o grupo está abaixo do fundo visível
+    if (groupRect.bottom > bodyRect.bottom - RESP) {
+      const diferenca = groupRect.top - bodyRect.top - RESP;
+      body.scrollTo({
+        top: body.scrollTop + diferenca,
+        behavior: 'smooth',
+      });
+    }
+  });
+}
 
 function attachSidebarInteractions() {
   attachSmoothScroll();
   attachScrollSpy();
 }
+
+// ============================================================
+// EXPÕE PARA O LOADER
+// ============================================================
+
+window.attachScrollSpy = attachScrollSpy;
+window.attachSmoothScroll = attachSmoothScroll;

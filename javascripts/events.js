@@ -15,6 +15,10 @@ $(document).ready(function(){
       }
     });
 
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
   //////////////////////////////////////////////////////////////////
 
   // Seu código abaixo
@@ -63,12 +67,6 @@ $(document).ready(function(){
       progressBar.style.width = progress + '%';
     });
   }
-
-  container.addEventListener('scroll', () => {
-    const maxScroll = container.scrollHeight - container.clientHeight;
-    const progress = maxScroll > 0 ? (container.scrollTop / maxScroll) * 100 : 0;
-    progressBar.style.width = progress + '%';
-  });
 
 
   //Sidebar — Botão hambúrguer (reabrir menu)
