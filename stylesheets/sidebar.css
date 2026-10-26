@@ -215,12 +215,12 @@
 }
 
 .page-nav-list > li > a:hover {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Item ativo (mesmo visual do hover) */
 .page-nav-list > li > a.ativo {
-  font-weight: bold;
+  font-weight: 600;
   color: #301517;
 }
 

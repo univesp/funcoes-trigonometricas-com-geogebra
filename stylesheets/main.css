@@ -13,6 +13,19 @@ a {
   text-decoration: none !important;
 }
 
+.font-strong {
+  font-weight: 600;
+}
+
+.lista-ordenada-livre {
+  font-family: 'Rubik', sans-serif;
+  padding-left: 20px;
+  font-size: 16px;
+}
+.lista-ordenada-livre li::marker {
+  font-weight: bolder;
+}
+
 .container {
   max-width: 100% !important;
 }
@@ -148,7 +161,7 @@ a {
 /* Corpo da seção */
 .secao-corpo {
   padding-top: 60px;
-  padding-bottom: 80px;
+  padding-bottom: 65px;
 }
 
 .secao-lilas {
@@ -216,7 +229,7 @@ a {
   font-size: 17px;
   line-height: 1.6;
   color: #060706;
-  max-width: 750px;
+  max-width: 820px;
   margin: 0 0 16px 0;
 }
 
@@ -231,11 +244,11 @@ a {
 /* ---------- FIGURAS COM MOLDURA ---------- */
 .secao-figura {
   margin: 40px 0 60px 0;
-  max-width: 750px;   /* mesma largura máxima dos parágrafos */
+  max-width: 820px;   /* mesma largura máxima dos parágrafos */
 }
 
 .secao-figura-moldura {
-  background-color: #F6DCD2;   /* mesmo rosa do secao-rosa */
+  background-color: #FBFBF9;  
   padding: 15px;               /* respiro interno entre a borda e a imagem */
   border-radius: 6px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
@@ -246,15 +259,111 @@ a {
   width: 100%;
   height: auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .08);   /* sombra suave na imagem */
+  border-radius: 5px;
 }
 
+/* Container que segura a legenda e as bolinhas */
+.carrossel-footer {
+  position: relative;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* A legenda continua centralizada */
 .secao-figura figcaption {
   font-family: "Rubik", sans-serif;
-  font-size: 15px;
+  font-size: 17px;
   color: #060706;
-  text-align: center;
-  margin-top: 20px;
   font-weight: 400;
+  margin: 0; /* Remove a margem antiga, agora quem dá espaço é a carrossel-footer */
+  margin-left: 1%;
+  max-width: 605px;
+}
+
+/* ---------- BOLINHAS DO CARROSSEL ---------- */
+.carrossel-bolinhas {
+  position: absolute;
+  right: 0;
+  top: 7px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carrossel-indicador {
+  /* Tamanho e formato */
+  width: 28px;
+  height: 11.5px;
+  border-radius: 5px;
+  
+  /* Cor da borda e do fundo quando NÃO está ativa (vazia) */
+  background-color: transparent;
+  border: 2px solid #8a6f64;
+  
+  /* Remove estilos padrão de botão */
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Quando a bolinha está ATIVA (preenchida) */
+.carrossel-indicador.ativo {
+  background-color: #8a6f64; 
+  border-color: #8a6f64;     /* Borda da mesma cor do fundo */
+}
+
+/* Opcional: efeito ao passar o mouse */
+.carrossel-indicador:hover {
+  border-color: #8a6f64;
+}
+
+.carrossel-container {
+  position: relative;
+}
+
+.carrossel-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-seta:hover {
+  opacity: 1;
+}
+
+.carrossel-seta:active, .carrossel-seta:focus {
+  border: none;
+  outline: 0;
+}
+
+.carrossel-seta img {
+  width: 25px; /* Tamanho da seta */
+  height: auto;
+  box-shadow: none !important; /* Tira a sombra que o CSS da imagem estava aplicando nas setas */
+}
+
+.carrossel-seta-prev {
+  left: -65px; /* Joga a seta pra fora da moldura branca */
+}
+
+.carrossel-seta-next {
+  right: -65px;
+}
+
+/* Efeito de fade na imagem */
+.carrossel-img {
+  transition: opacity 0.2s ease-in-out;
 }
 
 /* ---------- BLOCOS DE INFORMAÇÃO (ícone + barra lateral) ---------- */
@@ -265,10 +374,9 @@ a {
   gap: 24px;
   padding: 24px 32px;
   margin-top: 32px;
-  margin-left: 15px;
   background-color: #FBFBF9;   /* fundo definido por você */
   border-radius: 4px;
-  max-width: 750px;
+  max-width: 820px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
 }
 
@@ -323,7 +431,7 @@ a {
   line-height: 1.5;
   color: #060706;
   margin: 0 0 12px 0;
-  max-width: none;
+  width: 97%;
 }
 
 .bloco-info-corpo p:last-child {
@@ -338,6 +446,10 @@ a {
   font-size: 16px;
   line-height: 1.5;
   color: #060706;
+}
+
+.bloco-info-corpo ol li::marker {
+  font-weight: bold;
 }
 
 .bloco-info-corpo ul li {
@@ -379,7 +491,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 16px 60px;
+  padding: 10px 70px;
   border-radius: 4px;
   text-decoration: none;
   transition: background-color .2s ease, transform .1s ease;

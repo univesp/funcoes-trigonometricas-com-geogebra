@@ -1,0 +1,162 @@
+[
+  {
+    "carrosselId": "aula1-carrossel-1",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-01-01.png",
+        "alt": "Print da página inicial do GeoGebra",
+        "legenda": "<span class='font-strong'>1.</span> Clique em <span class='font-strong'>Entrar no sistema</span>, na parte superior direita da tela;"
+      },
+      {
+        "src": "assets/aula1/carrossel-01-02.png",
+        "alt": "Print da tela de login",
+        "legenda": "<span class='font-strong'>2.</span> Faça <span class='font-strong'>login</span> utilizando uma conta do Google ou Facebook, ou selecione a opção Criar conta;"
+      },
+      {
+        "src": "assets/aula1/carrossel-01-03.png",
+        "alt": "Print da tela de login",
+        "legenda": "<span class='font-strong'>3.</span> Clique em Entrar no sistema, na parte superior direita da tela;"
+      }
+    ]
+  },
+
+  {
+    "carrosselId": "aula1-carrossel-2",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-02-01.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando o plano cartesiano.",
+        "legenda": "<span class='font-strong'>1.</span> <span class='font-strong'>Plano cartesiano:</span> A região central da tela corresponde ao plano cartesiano, onde serão exibidos gráficos, pontos e construções geométricas."
+      },
+      {
+        "src": "assets/aula1/carrossel-02-02.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando o Campo de Entrada.",
+        "legenda": "<span class='font-strong'>2.</span> <span class='font-strong'>Campo de entrada:</span> O campo de entrada permite digitar funções e comandos matemáticos."
+      },
+      {
+        "src": "assets/aula1/carrossel-02-03.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando o Painel algébrico.",
+        "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Painel algébrico:</span> Apresenta os objetos criados e suas representações matemáticas."
+      },
+      {
+        "src": "assets/aula1/carrossel-02-04.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando o Menu lateral.",
+        "legenda": "<span class='font-strong'>4.</span> <span class='font-strong'>Menu lateral:</span> Permite acessar ferramentas, tabelas e outros recursos."
+      }
+    ]
+  },
+
+  {
+    "carrosselId": "aula1-carrossel-3",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-03-01.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Mover.",
+        "legenda": "<span class='font-strong'>1.</span> <span class='font-strong'>Mover:</span> permite arrastar objetos no plano;"
+      },
+      {
+        "src": "assets/aula1/carrossel-03-02.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Ponto.",
+        "legenda": "<span class='font-strong'>2.</span> <span class='font-strong'>Ponto:</span> cria pontos no plano cartesiano;"
+      },
+      {
+        "src": "assets/aula1/carrossel-03-03.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando oa ferramenta Controle deslizante.",
+        "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Controle deslizante:</span> permite criar valores variáveis;"
+      },
+      {
+        "src": "assets/aula1/carrossel-03-04.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Interseção.",
+        "legenda": "<span class='font-strong'>4.</span> <span class='font-strong'>Interseção:</span> identifica pontos comuns entre objetos;"
+      },
+      {
+        "src": "assets/aula1/carrossel-03-05.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Raízes.",
+        "legenda": "<span class='font-strong'>5.</span> <span class='font-strong'>Raízes:</span> determina zeros de funções."
+      }
+    ]
+  },
+
+  {
+    "carrosselId": "aula1-carrossel-4",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-04-01.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Ângulo.",
+        "legenda": "<span class='font-strong'>1.</span> <span class='font-strong'>Ângulo:</span> cria ângulos entre segmentos ou retas;"
+      },
+      {
+        "src": "assets/aula1/carrossel-04-02.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Distância ou comprimento.",
+        "legenda": "<span class='font-strong'>2.</span> <span class='font-strong'>Distância ou comprimento:</span> realiza medidas lineares;"
+      },
+      {
+        "src": "assets/aula1/carrossel-04-03.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando oa ferramenta Área.",
+        "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Área:</span> determina a área de regiões;"
+      },
+      {
+        "src": "assets/aula1/carrossel-04-04.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Reflexão.",
+        "legenda": "<span class='font-strong'>4.</span> <span class='font-strong'>Reflexão:</span> permite repetir objetos;"
+      },
+      {
+        "src": "assets/aula1/carrossel-04-05.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Translação.",
+        "legenda": "<span class='font-strong'>5.</span> <span class='font-strong'>Translação:</span> desloca objetos no plano."
+      }
+    ]
+  },
+
+  {
+    "carrosselId": "aula1-carrossel-5",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-05-01.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Reta perpendicular.",
+        "legenda": "<span class='font-strong'>1.</span> <span class='font-strong'>Reta perpendicular:</span> constrói retas com ângulo de 90º;"
+      },
+      {
+        "src": "assets/aula1/carrossel-05-02.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Reta paralela.",
+        "legenda": "<span class='font-strong'>2.</span> <span class='font-strong'>Reta paralela:</span> cria retas paralelas;"
+      },
+      {
+        "src": "assets/aula1/carrossel-05-03.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando oa ferramenta Bissetriz.",
+        "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Bissetriz:</span> cria a bissetriz de um ângulo;"
+      },
+      {
+        "src": "assets/aula1/carrossel-05-04.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Mediatriz.",
+        "legenda": "<span class='font-strong'>4.</span> <span class='font-strong'>Mediatriz:</span> cria a mediatriz de um segmento: reta perpendicular que divide um segmento em dois segmentos congruentes;"
+      },
+      {
+        "src": "assets/aula1/carrossel-05-05.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Reta tangente.",
+        "legenda": "<span class='font-strong'>5.</span> <span class='font-strong'>Reta tangente:</span> constrói a reta tangente a uma curva dada."
+      }
+    ]
+  },
+
+  {
+    "carrosselId": "aula1-carrossel-6",
+    "items": [
+      {
+        "src": "assets/aula1/carrossel-06-01.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Circunferência e arcos.",
+        "legenda": "<span class='font-strong'>1.</span> <span class='font-strong'>Circunferência e arcos:</span> permitem construir círculos e suas partes;"
+      },
+      {
+        "src": "assets/aula1/carrossel-06-02.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando a ferramenta Cônicas.",
+        "legenda": "<span class='font-strong'>2.</span> <span class='font-strong'>Cônicas:</span> possibilitam criar elipses, parábolas e hipérboles;"
+      },
+      {
+        "src": "assets/aula1/carrossel-06-03.png",
+        "alt": "Print de tela da página do GeoGebra demonstrando oa ferramenta Transformações.",
+        "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Transformações:</span> incluem rotações, ampliações e reduções."
+      }
+    ]
+  }
+]

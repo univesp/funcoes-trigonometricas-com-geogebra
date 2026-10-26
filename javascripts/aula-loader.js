@@ -12,8 +12,8 @@ const cacheAulas = {};
 
 /**
  * Carrega uma aula no #aula-container.
- * @param {string} aulaId - Ex: "aula-1"
- * @param {object} options - { scrollTo: "#secao" (opcional) }
+ @param {string} aulaId - Ex: "aula-1"
+ @param {object} options - { scrollTo: "#secao" (opcional) }
  */
 async function carregarAula(aulaId, options = {}) {
   const container = document.getElementById('aula-container');
@@ -62,6 +62,10 @@ async function carregarAula(aulaId, options = {}) {
     // Injeta
     container.innerHTML = html;
     container.dataset.aulaAtual = aulaId;
+
+    if (typeof inicializarCarrosseis === 'function') {
+      inicializarCarrosseis();
+    }
 
     // Persiste no localStorage
     try {
