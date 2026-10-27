@@ -5,7 +5,7 @@
       {
         "src": "assets/aula1/carrossel-01-01.png",
         "alt": "Print da página inicial do GeoGebra",
-        "legenda": "<span class='font-strong'>1.</span> Clique em <span class='font-strong'>Entrar no sistema</span>, na parte superior direita da tela;"
+        "legenda": "<span class='font-strong'>1.</span> Clique em <span class='font-strong'>Entrar na Tarefa</span>, na parte superior direita da tela;"
       },
       {
         "src": "assets/aula1/carrossel-01-02.png",
@@ -15,7 +15,7 @@
       {
         "src": "assets/aula1/carrossel-01-03.png",
         "alt": "Print da tela de login",
-        "legenda": "<span class='font-strong'>3.</span> Clique em Entrar no sistema, na parte superior direita da tela;"
+        "legenda": "<span class='font-strong'>3.</span> Clique em Entrar no sistema, na parte superior direita da tela."
       }
     ]
   },
