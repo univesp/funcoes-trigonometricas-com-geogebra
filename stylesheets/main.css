@@ -507,6 +507,35 @@ a {
   transform: translateY(0);   /* volta ao "clicar" */
 }
 
+/* ===========================================================
+   BOTÃO CONTEÚDO
+   ========================================================= */
+
+  .btn-content {
+    display: inline-block;
+    background-color: #3F1464;
+    color: #FFFFFF;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 50px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color .2s ease, transform .1s ease;
+  } 
+
+  .btn-content:hover {
+    background-color: #2D0E47;
+    color: #FFFFFF;
+    transform: translateY(-2px); 
+  }
+
+  .btn-content:active {
+    transform: translateY(0);
+  }
+
 
 /* ============================================================
    AULA LOADING (spinner)
