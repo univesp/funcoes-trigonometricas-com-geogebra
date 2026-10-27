@@ -102,6 +102,22 @@ function getAulaAtualSalva() {
   }
 }
 
+// ⬇️ NOVA FUNÇÃO: Fecha o menu apenas se estiver em tela pequena ⬇️
+function fecharMenuMobile() {
+  const isLargeScreen = window.innerWidth >= 1400;
+  if (isLargeScreen) return; // Se for desktop, mantém aberto
+
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.getElementById('sidebar-toggle');
+  
+  if (sidebar && toggle) {
+    sidebar.classList.add('sidebar-hidden');
+    toggle.classList.add('sidebar-toggle-visible');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+}
+// ⬆️ FIM DA NOVA FUNÇÃO ⬆️
+
 function attachAccordionBehavior() {
   document.querySelectorAll('.sidebar-heading').forEach((heading) => {
     heading.addEventListener('click', () => {
@@ -173,7 +189,10 @@ function attachAulaClickHandlers() {
         e.preventDefault();
         carregarAula(aulaId, { scrollTo: href });
       }
-      // Se já é a aula atual, o attachSmoothScroll cuida de rolar
+      
+      // ⬇️ NOVO: Fecha o menu mobile após clicar ⬇️
+      fecharMenuMobile();
+      
     });
   });
 
@@ -186,6 +205,7 @@ function attachAulaClickHandlers() {
       if (aulaId !== aulaAtual) {
         carregarAula(aulaId);
       }
+      // Não fecha no heading, pois o usuário pode querer abrir os itens primeiro
     });
   });
 }
@@ -221,6 +241,10 @@ function attachSmoothScroll() {
       });
 
       setActiveLink(link);
+      
+      // ⬇️ NOVO: Fecha o menu mobile após clicar ⬇️
+      fecharMenuMobile();
+      
     }, { signal });
   });
 }

@@ -7,17 +7,15 @@ let creditosContent = `
           <p>Secretaria de Desenvolvimento Econômico</p>
 
           <h6>UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO – UNIVESP</h6>
-          <p><span class="funcao">Presidente</span>Rodolfo Jardim de Azevedo</p>
-          <p><span class="funcao">Diretora Acadêmica</span>Simone Telles Martins Ramos</p>
+          <p><span class="funcao">Presidente</span>Marcos Augusto Francisco Borges</p>
+          <p><span class="funcao">Diretor Acadêmico</span>Romero Tori</p>
 
           <h6>Equipe</h6>
-          <p><span class="funcao">Docente responsável</span>Fulano de Tal</p>
-          <p><span class="funcao">Coordenação</span>Édison Trombeta</p>
-          <p><span class="funcao">Roteirização e Design Instrucional</span>Fulano de Tal, Ciclano de Tal</p>
-          <p><span class="funcao">Ilustração</span>Fulano de Tal, Ciclano de Tal</p>
-          <p><span class="funcao">Layout</span>Fulano de Tal, Ciclano de Tal</p>
-          <p><span class="funcao">Programação</span>Fulano de Tal, Ciclano de Tal</p>
-          <p><span class="funcao">Revisão</span>Fulano de Tal, Ciclano de Tal</p>
+          <p><span class="funcao">Docente responsável</span>Profaª Drª Miriam Garcia Manoel</p>
+          <p><span class="funcao">Coordenação</span>Wesley de Souza Lima</p>
+          <p><span class="funcao">Roteirização e Design Instrucional</span>José Adriano Silva de Oliveira e Rafael Campelo</p>
+          <p><span class="funcao">Ilustração e layout</span>Pedro Matheus</p>
+          <p><span class="funcao">Programação</span>Gabriel H. Gallo da Silva e Marconi Sena da Silva</p>
 
         </div>
         <div class="modal-footer">
