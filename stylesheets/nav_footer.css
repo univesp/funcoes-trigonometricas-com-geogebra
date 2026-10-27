@@ -101,6 +101,14 @@ main {
   footer .aval-rea .btn-secondary:last-of-type {
     margin-left: 0;
   }
+
+  body:has(.sidebar.sidebar-hidden) footer {
+    padding-left: 2rem;
+  }
+
+  footer {
+    padding: 0;
+  }
 }
 
 @media (max-width: 1550px) {

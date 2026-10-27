@@ -241,7 +241,7 @@ a {
   color: #301517;
 }
 
-/* ---------- FIGURAS COM MOLDURA ---------- */
+/* ---------- CARROSEL FIGURAS COM MOLDURA ---------- */
 .secao-figura {
   margin: 40px 0 60px 0;
   max-width: 820px;   /* mesma largura máxima dos parágrafos */
@@ -654,6 +654,18 @@ body.carregando-aula #aula-container {
 @media (max-width: 1199px) {
   .secao-inicial-arte {
     height: 25%;
+  }
+
+  .carrossel-footer {
+    margin-top: 10px;
+  }
+
+  .carrossel-bolinhas {
+    top: 17px;
+  }
+
+  .secao-figura figcaption {
+    max-width: 416px;
   }
 }
 

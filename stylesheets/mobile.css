@@ -35,7 +35,7 @@
        BOTÃO SIDEBAR
        ---------------------------------------------------------- */
     .sidebar-toggle {
-      top: 100px;
+      top: 120px;
       left: 15px;
       padding: 10px 12px;
       border-radius: 8px;
@@ -84,7 +84,6 @@
     /* Bloco info mantém o offset do ícone */
     .bloco-info {
       max-width: 100%;
-      margin-left: 15px;
     }
   
     /* ----------------------------------------------------------
@@ -136,7 +135,7 @@
     }
   
     .secao-corpo p {
-      font-size: 15px;
+      font-size: 16px;
     }
   
     .secao-titulo {
@@ -254,12 +253,16 @@
     }
   }
 
+  @media (max-width: 1020px) {
+    .sidebar-toggle {
+      top: 100px;
+    }
+  }
+
   @media (max-width: 768px) {
 
     .section-conteudo {
       margin: 0 auto;
-      padding-left: 30px;
-      padding-right: 30px;
     }
   
     .secao-corpo p,
@@ -271,7 +274,41 @@
   
     .bloco-info {
       max-width: 100%;
-      margin-left: 15px;
+    }
+  }
+
+  @media (max-width: 699px) {
+    .section-conteudo {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .conteudo-interno {
+      width: 70%;         /* Ocupa 70% do espaço */
+      max-width: 900px;   /* Impede de ficar esticado demais em telas grandes */
+      margin: 0 auto;     /* Centraliza o bloco na tela */
+    }
+
+    .secao-inicial-arte {
+      height: 30%;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .secao-inicial-arte {
+      height: 23%;
+    }
+  }
+
+  @media (max-width: 499px) {
+    .secao-inicial-arte {
+      height: 18%;
+    }
+  }
+
+  @media (max-width: 399px) {
+    .secao-inicial-arte {
+      height: 14%;
     }
   }
   
@@ -279,11 +316,6 @@
      CELULARES PEQUENOS (< 480px)
      ============================================================ */
   @media (max-width: 479.98px) {
-  
-    .section-conteudo {
-      padding-left: 18px;
-      padding-right: 18px;
-    }
   
     .secao-inicial-titulo {
       font-size: 24pt;
@@ -295,10 +327,6 @@
   
     .secao-inicial .section-conteudo {
       padding-top: 180px;
-    }
-  
-    .secao-inicial-arte {
-      height: 150px;
     }
   
     .secao-titulo {
@@ -313,7 +341,8 @@
       font-size: 15px;
     }
   
-    .secao-corpo p {
+    .secao-corpo p,
+    .lista-ordenada-livre {
       font-size: 14px;
     }
   
@@ -331,3 +360,70 @@
       font-size: 22px;
     }
   }
+
+  
+  /* ============================================================
+   RESPONSIVIDADE DO CARROSSEL (MOBILE)
+   ============================================================ */
+
+/* Telas menores que 899px (Tablets e celulares) */
+@media (max-width: 899.98px) {
+  .carrossel-seta-prev {
+    left: -60px; /* Traz as setas pra mais perto no mobile */
+  }
+
+  .carrossel-seta-next {
+    right: -60px;
+  }
+  
+  /* Empilha as bolinhas (em cima) e a legenda (embaixo) */
+  .carrossel-footer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;        
+    gap: 5px;
+    margin-top: 15px;
+  }
+
+  /* Muda o posicionamento das bolinhas de absoluto pra flex normal */
+  .carrossel-bolinhas {
+    position: static;
+    order: -1; /* Garante que fique em cima da legenda */
+  }
+
+  /* Ajusta a legenda para ocupar o espaço todo */
+  .secao-figura figcaption {
+    font-size: 14px;
+    margin-left: 2%;
+    max-width: 100%;
+    text-align: left; /* No print a legenda do mobile fica alinhada à esquerda */
+  }
+}
+
+/* Telas de celular (abaixo de 576px) */
+@media (max-width: 575.98px) {
+  .secao-figura-moldura {
+    padding: 10px; /* Diminui o respiro interno do box branco */
+  }
+
+  .carrossel-seta-prev {
+    left: -50px; /* Ainda mais perto */
+  }
+
+  .carrossel-seta-next {
+    right: -50px;
+  }
+
+  .carrossel-seta img {
+    width: 18px; /* Diminui a seta */
+  }
+
+  .carrossel-indicador {
+    width: 22px; /* Diminui as bolinhas */
+    height: 10px;
+  }
+  
+  .secao-figura figcaption {
+    font-size: 15px;
+  }
+}
