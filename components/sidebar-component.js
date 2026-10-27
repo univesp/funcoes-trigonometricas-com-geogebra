@@ -102,7 +102,7 @@ function getAulaAtualSalva() {
   }
 }
 
-// ⬇️ NOVA FUNÇÃO: Fecha o menu apenas se estiver em tela pequena ⬇️
+// Fecha o menu apenas se estiver em tela pequena
 function fecharMenuMobile() {
   const isLargeScreen = window.innerWidth >= 1400;
   if (isLargeScreen) return; // Se for desktop, mantém aberto
@@ -116,7 +116,7 @@ function fecharMenuMobile() {
     toggle.setAttribute('aria-expanded', 'false');
   }
 }
-// ⬆️ FIM DA NOVA FUNÇÃO ⬆️
+//
 
 function attachAccordionBehavior() {
   document.querySelectorAll('.sidebar-heading').forEach((heading) => {
@@ -190,7 +190,7 @@ function attachAulaClickHandlers() {
         carregarAula(aulaId, { scrollTo: href });
       }
       
-      // ⬇️ NOVO: Fecha o menu mobile após clicar ⬇️
+      // Fecha o menu mobile após clicar 
       fecharMenuMobile();
       
     });
@@ -223,7 +223,7 @@ function attachSmoothScroll() {
   const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
   if (!scrollContainer) return;
 
-  const OFFSET = 60;
+  const OFFSET = 90;
 
   document.querySelectorAll('.page-nav-list a').forEach((link) => {
     link.addEventListener('click', (e) => {
