@@ -12,16 +12,10 @@
     "aula": "aula-2",
     "title": "<strong>Aula 2</strong> • Investigando relações trigonométricas",
     "items": [
-      { "href": "#aula2-topico1", "label": "2.1 Objetivo da aula" },
-      { "href": "#aula2-topico2", "label": "2.2 Construindo a situação no GeoGebra" },
-      { "href": "#aula2-topico3", "label": "2.3 Construção inicial" },
-      { "href": "#aula2-topico4", "label": "2.4 Identificando elementos do triângulo" },
-      { "href": "#aula2-topico5", "label": "2.5 Medindo segmentos" },
-      { "href": "#aula2-topico6", "label": "2.6 Explorando relacoes entre medidas" },
-      { "href": "#aula2-topico7", "label": "2.7 Investigação 1: Variação do tamanho do triângulo" },
-      { "href": "#aula2-topico8", "label": "2.8 Investigação 2: Variação do ângulo" },
-      { "href": "#aula2-topico9", "label": "2.9 Sistematizando as relações" },
-      { "href": "#aula2-topico10", "label": "2.10 Síntese da aula" }
+      { "href": "#aula2-topico1", "label": "2.1 Construção inicial" },
+      { "href": "#aula2-topico2", "label": "2.2 Identificando elementos do triângulo" },
+      { "href": "#aula2-topico3", "label": "2.3 Explorando relações entre medidas" },
+      { "href": "#aula2-topico4", "label": "2.4 Sistematizando as relações" }
     ]
   },
   {

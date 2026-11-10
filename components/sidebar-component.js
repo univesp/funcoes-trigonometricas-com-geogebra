@@ -208,6 +208,43 @@ function attachAulaClickHandlers() {
       // Não fecha no heading, pois o usuário pode querer abrir os itens primeiro
     });
   });
+
+  // ⬇️ NOVO: Botão "Próximo" no final da aula (Delegação de Eventos) ⬇️
+  document.addEventListener('click', (e) => {
+    // Verifica se o elemento clicado (ou um pai dele) é o botão próximo
+    const botao = e.target.closest('.btn-proximo[data-aula]');
+    if (!botao) return;
+
+    e.preventDefault(); // Impede de recarregar a página
+    
+    const proximaAulaId = botao.dataset.aula;
+    
+    // 1. Carrega a próxima aula
+    if (typeof carregarAula === 'function') {
+      carregarAula(proximaAulaId);
+    }
+
+    // 2. Atualiza o menu lateral para a próxima aula
+    const grupoProximo = document.querySelector(`.sidebar-group[data-aula="${proximaAulaId}"]`);
+    if (grupoProximo) {
+      // Fecha todos os grupos
+      document.querySelectorAll('.sidebar-group').forEach(g => {
+        g.classList.remove('open');
+        g.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'false');
+      });
+      
+      // Abre o próximo
+      grupoProximo.classList.add('open');
+      grupoProximo.querySelector('.sidebar-heading').setAttribute('aria-expanded', 'true');
+      
+      // Atualiza o título da aba do navegador
+      const titleEl = grupoProximo.querySelector('.sidebar-heading span');
+      if (titleEl) document.title = titleEl.textContent.trim();
+      
+      // Rola a sidebar para mostrar o grupo da nova aula
+      scrollGrupoIntoView(grupoProximo);
+    }
+  });
 }
 
 // ============================================================

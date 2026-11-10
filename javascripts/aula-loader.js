@@ -79,10 +79,34 @@ async function carregarAula(aulaId, options = {}) {
     const scrollContainer = document.querySelector('#conteudoPrincipal > .container');
     if (scrollContainer) scrollContainer.scrollTop = 0;
 
-    // Reprocessa MathJax (se disponível)
-    if (window.MathJax && MathJax.Hub) {
-      MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-    }
+    // Reprocessa MathJax de forma segura    
+    // Função que manda o MathJax renderizar
+    const renderizarMath = () => {
+      if (window.MathJax && MathJax.Hub) {
+        MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+      }
+    };
+
+    // 1. Tenta renderizar 500ms depois (caso o MathJax já esteja pronto)
+    setTimeout(renderizarMath, 500);
+
+    // 2. Fica olhando se algum texto novo foi injetado no container
+    const observerMath = new MutationObserver((mutations) => {
+      // Se houve mudança no texto, manda renderizar
+      renderizarMath();
+    });
+
+    // Começa a vigiar o container da aula
+    observerMath.observe(container, { 
+      childList: true, 
+      subtree: true, 
+      characterData: true 
+    });
+
+    // Para o vigia quando a aula for trocada (evita vazamento de memória)
+    // (Adicione isso antes de trocar de aula, se você tiver uma função de troca)
+    // observerMath.disconnect();
+
 
     // Reinicializa comportamentos que dependem do DOM da aula
     reinicializarComportamentos();
@@ -94,11 +118,22 @@ async function carregarAula(aulaId, options = {}) {
 
   } catch (erro) {
     console.error('[aula-loader]', erro);
-    container.innerHTML = `
-      <div class="aula-erro">
-        <p>Não foi possível carregar a aula. Tente novamente.</p>
-      </div>
-    `;
+
+    const mensagem = window.location.protocol === 'file:'
+      ? `
+        <div class="aula-erro">
+          <p>Este recurso precisa ser aberto em um servidor web.</p>
+          <p>O navegador bloqueia <code>fetch()</code> quando a página é aberta diretamente como arquivo local (<code>file://</code>).</p>
+          <p>Abra via <code>http://localhost</code> (ex.: <code>python -m http.server 8000</code>) ou use um servidor local como Live Server.</p>
+        </div>
+      `
+      : `
+        <div class="aula-erro">
+          <p>Não foi possível carregar a aula. Tente novamente.</p>
+        </div>
+      `;
+
+    container.innerHTML = mensagem;
 
     // Em caso de erro, também atualiza o título pra indicar
     document.title = 'Erro ao carregar';

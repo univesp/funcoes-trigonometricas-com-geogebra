@@ -72,7 +72,7 @@
       padding-right: 170px;
       padding-top: 60px;
     }
-  
+
     /* Elementos internos: ocupam toda a largura do bloco centralizado */
     .secao-corpo p,
     .secao-figura,
@@ -414,12 +414,16 @@
     padding: 10px; /* Diminui o respiro interno do box branco */
   }
 
+  .bloco-info-corpo p {
+    overflow-wrap: anywhere;
+  }
+
   .carrossel-seta-prev {
-    left: -50px; /* Ainda mais perto */
+    left: -20px;
   }
 
   .carrossel-seta-next {
-    right: -50px;
+    right: -20px;
   }
 
   .carrossel-seta img {

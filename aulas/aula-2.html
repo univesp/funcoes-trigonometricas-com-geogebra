@@ -3,37 +3,266 @@
      Este arquivo é carregado dinamicamente pelo aula-loader.js
 ============================================================== -->
 
-<section 
-  class="secao-container secao-inicial" 
-  id="conteudo2"
-  style="
-    background: linear-gradient(
-      to bottom,
-    #E8AFB9 0%,
-    #E8AFB9 10%,     
-    #EEEEE8 30%,    
-    #EEEEE8 100%
-    );
-  "
-  > <!-- Ajustar com as cores do gradiente de cada aula -->
+<section class="secao-container secao-inicial" id="conteudo2">
+  <div class="conteudo-interno">
+    <img
+      class="secao-inicial-arte"
+      src="assets/aula2/arte_capitulo_02.png"
+      alt=""
+      aria-hidden="true">
+    <div class="section-conteudo">
+      <div class="secao-inicial-conteudo">
+        <h1 class="secao-inicial-titulo">
+          Aula 2
+        </h1>
+        <p class="secao-inicial-subtitulo">
+          Investigando Relações Trigonométricas
+        </p>
+        <hr class="secao-inicial-divisor">
+      </div>
 
-  <img
-    class="secao-inicial-arte"
-    src="assets/aula1/arte_capitulo_01.png"
-    alt=""
-    aria-hidden="true"
-    style="height: 50%;"
-  > <!-- Ajustar height da imagem de acordo com cada aula -->
-
-<div class="section-conteudo">
-  <div class="secao-inicial-conteudo">
-    <h1 class="secao-inicial-titulo">
-      Aula 2
-    </h1>
-    <hr class="secao-inicial-divisor">
-    <p class="secao-inicial-subtitulo">
-      Aula 2 carregando corretamente.
-    </p>
+      <div class="bloco-destaque">
+        <p>Na aula anterior você deu os primeiros passos sobre o uso do GeoGebra e conheceu algumas ferramentas iniciais. Agora, o objetivo é que se investigue as relações entre medidas em triângulos retângulos, explorando a ideia de que essas relações dependem do ângulo e não do tamanho do triângulo.</p>
+        <p>Para isso, inicie acessando o site <a class="link-textos font-strong" href="https://www.geogebra.org/" target="_blank" rel="noopener noreferrer"><u>GeoGebra</u></a> e em seguida abra a <span class="font-strong">calculadora gráfica</span> do GeoGebra.</p>
+      </div>
+    </div>
   </div>
+</section>
 
+<!-- 2.1 CONSTRUÇÃO INICIAL -->
+<section class="secao-container aula2-conteudo" id="aula2-topico1">
+  <div class="section-conteudo secao-corpo secao-lilas">
+    <div class="conteudo-interno">
+      <h3 class="secao-subtitulo-pequeno">2.1 Construção inicial</h3>
+      <p>Vamos começar com uma atividade básica:</p>
+
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-video-construcao"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda" id="figcaption-longo"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+
+      <p>O resultado dessa interação forma um triângulo retângulo:</p>
+      <figure class="secao-figura">
+        <img class="img-fluid" src="assets/aula2/Aula02_imagem01.png" alt="Triângulo retângulo construído no GeoGebra"
+          onerror="this.closest('figure').hidden = true">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 2.2 IDENTIFICANDO ELEMENTOS DO TRIÂNGULO -->
+<section class="secao-container aula2-conteudo" id="aula2-topico2">
+  <div class="section-conteudo secao-corpo secao-rosa">
+    <div class="conteudo-interno">
+      <h3 class="secao-subtitulo-pequeno">2.2 Identificando elementos do triângulo</h3>
+      <p>Agora vamos para uma nova atividade! Identifique, em relação ao ângulo α, os seguintes itens:</p>
+      <p><span class="termo-oposto">o cateto oposto;</span> <span class="termo-adjacente">o cateto adjacente;</span> <span class="termo-hipotenusa">a hipotenusa.</span></p>
+      <p>Em seguida, clique com o botão direito do mouse sobre o segmento AB, acesse <span class="font-strong">Configurações</span> e, em <span class="font-strong">Legenda</span>, nomeie-o como <span class="termo-oposto">Cateto oposto</span>. Repita o procedimento para o segmento OB, nomeando-o como <span class="termo-hipotenusa">Hipotenusa</span>, e para o segmento OA, nomeando-o como <span class="termo-adjacente">Cateto adjacente</span>. Vejamos o resultado:</p>
+
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-carrossel-identificacao"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+
+      <p>Atenção: para saber como medir os segmentos, use a ferramenta <span class="font-strong">Distância ou comprimento</span> e meça os segmentos AB, OB e OA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2.3 EXPLORANDO RELAÇÕES ENTRE MEDIDAS -->
+<section class="secao-container aula2-conteudo" id="aula2-topico3">
+  <div class="section-conteudo secao-corpo secao-cinza">
+    <div class="conteudo-interno">
+      <h3 class="secao-subtitulo-pequeno">2.3 Explorando relações entre medidas</h3>
+      <p>Agora vamos explorar as relações entre as medidas de forma prática. Calcule as seguintes razões:</p>
+      <p>lado <span class="termo-oposto">oposto</span> dividido pela <span class="termo-hipotenusa">hipotenusa</span>;</p>
+      <p>lado <span class="termo-adjacente">adjacente</span> dividido pela <span class="termo-hipotenusa">hipotenusa</span>;</p>
+      <p>lado <span class="termo-oposto">oposto</span> dividido pelo lado <span class="termo-adjacente">adjacente</span>.</p>
+      <p>Para isso, no campo de entrada, digite:</p>
+      <div class="formula-box">
+        <math display="block">
+          <mrow>
+            <msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mfrac><mi>h</mi><mi>i</mi></mfrac>
+            <mo>,</mo><mspace width="0.5em"/>
+            <msub><mi>r</mi><mn>2</mn></msub><mo>=</mo><mfrac><mi>f</mi><mi>i</mi></mfrac>
+            <mo>,</mo><mspace width="0.5em"/>
+            <msub><mi>r</mi><mn>3</mn></msub><mo>=</mo><mfrac><mi>h</mi><mi>f</mi></mfrac>
+          </mrow>
+        </math>
+      </div>
+
+      <p>Agora, utilizando a ferramenta <span class="font-strong">Texto</span>, represente essas razões no GeoGebra. Clique na ferramenta <span class="font-strong">Texto</span> e digite:</p>
+      <div class="formula-box"><code>r_1=\frac{cateto \ oposto}{hipotenusa}=\frac{}{}</code></div>
+      <p>Em seguida, vá em <span class="font-strong">Avançado</span>, clique no símbolo do GeoGebra e posicione o cursor dentro da primeira dupla de chaves, clicando em <span class="font-strong">h</span>; depois, na segunda dupla de chaves, clique em <span class="font-strong">i</span>. Acrescente o sinal de igualdade e selecione <i>r</i><sub>1</sub>. A expressão ficará:</p>
+      <div class="formula-box"><code>r_1=\frac{cateto \ oposto}{hipotenusa}=\frac{h}{i}=r_1</code></div>
+      <p>Pressione <span class="font-strong">Enter</span>. Na tela aparecerá algo como:</p>
+      <div class="formula-box">
+        <math display="block">
+          <mrow>
+            <msub><mi>r</mi><mn>1</mn></msub><mo>=</mo>
+            <mfrac><mtext>cateto oposto</mtext><mtext>hipotenusa</mtext></mfrac>
+            <mo>=</mo><mfrac><mn>0,8</mn><mn>1,36</mn></mfrac><mo>=</mo><mn>0,59</mn>
+          </mrow>
+        </math>
+      </div>
+
+      <p>Clique novamente na ferramenta <span class="font-strong">Texto</span> e digite:</p>
+      <div class="formula-box"><code>r_2=\frac{cateto \ adjacente}{hipotenusa}=\frac{}{}</code></div>
+      <p>Repita o procedimento anterior, inserindo <span class="font-strong">f</span> e <span class="font-strong">i</span>, e selecione <i>r</i><sub>2</sub>. A expressão ficará:</p>
+      <div class="formula-box"><code>r_2=\frac{cateto \ adjacente}{hipotenusa}=\frac{f}{i}=r_2</code></div>
+      <p>Pressione <span class="font-strong">Enter</span> e na tela aparecerá algo como:</p>
+      <div class="formula-box">
+        <math display="block">
+          <mrow>
+            <msub><mi>r</mi><mn>2</mn></msub><mo>=</mo>
+            <mfrac><mtext>cateto adjacente</mtext><mtext>hipotenusa</mtext></mfrac>
+            <mo>=</mo><mfrac><mn>1,1</mn><mn>1,36</mn></mfrac><mo>=</mo><mn>0,81</mn>
+          </mrow>
+        </math>
+      </div>
+
+      <p>Clique novamente na ferramenta <span class="font-strong">Texto</span> e digite:</p>
+      <div class="formula-box"><code>r_3=\frac{cateto \ oposto}{cateto \ adjacente}=\frac{}{}</code></div>
+      <p>Repita o procedimento anterior, inserindo <span class="font-strong">h</span> e <span class="font-strong">f</span>, e selecione <i>r</i><sub>3</sub>. A expressão ficará:</p>
+      <div class="formula-box"><code>r_3=\frac{cateto \ oposto}{cateto \ adjacente}=\frac{h}{f}=r_3</code></div>
+      <p>Pressione <span class="font-strong">Enter</span> e na tela aparecerá algo como:</p>
+      <div class="formula-box">
+        <math display="block">
+          <mrow>
+            <msub><mi>r</mi><mn>3</mn></msub><mo>=</mo>
+            <mfrac><mtext>cateto oposto</mtext><mtext>cateto adjacente</mtext></mfrac>
+            <mo>=</mo><mfrac><mn>0,8</mn><mn>1,1</mn></mfrac><mo>=</mo><mn>0,73</mn>
+          </mrow>
+        </math>
+      </div>
+      <p>A interação com os dados acima apresentados deve ser visualizada da seguinte maneira:</p>
+
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-carrossel-relacoes"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+
+      <p><span class="font-strong">Investigação 1: Variação do tamanho do triângulo</span></p>
+      <p>Agora faremos duas investigações com base no que foi aprendido até o momento. Para isso, realize a investigação 1:</p>
+      <div class="bloco-destaque-simples">
+        <p>Movimente a reta perpendicular, alterando o tamanho do triângulo, mas mantendo o ângulo fixo.</p>
+      </div>
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-video-investigacao-1"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+
+      <p>Para tornar essa variação mais controlada, utilize um controle deslizante:</p>
+      <ol class="lista-ordenada-livre">
+        <li>Selecione a ferramenta <span class="font-strong">Controle deslizante</span> e clique no plano cartesiano;</li>
+        <li>Na janela exibida, defina o nome <span class="font-strong">k</span>, o tipo <span class="font-strong">número</span> e o intervalo: mínimo 0, máximo 5 e incremento 0,1;</li>
+        <li>Clique em OK;</li>
+        <li>No campo de entrada, digite <span class="font-strong">A = (k, 0)</span> e pressione Enter;</li>
+        <li>Clique com o botão direito no plano cartesiano, abra Configurações, selecione o controle deslizante e, em Legenda, escreva <span class="font-strong">Reta Perpendicular</span>;</li>
+        <li>Por fim, movimente o controle deslizante.</li>
+      </ol>
+      <div class="bloco-info bloco-info-observe">
+        <div class="bloco-info-icone">
+          <img src="assets/icone_box_observe.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="bloco-info-corpo">
+          <h4 class="bloco-info-titulo">Observe</h4>
+          <p>Observe o que acontece com os comprimentos dos lados e as razões calculadas anteriormente. O que você observa ao movimentar o controle deslizante? Perceba que, embora os comprimentos dos lados mudem, as razões permanecem constantes.</p>
+        </div>
+      </div>
+
+      <p>Agora vamos para a segunda investigação.</p>
+      <p><span class="font-strong">Investigação 2: Variação do ângulo</span></p>
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-video-investigacao-2"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+      <p>Para controlar essa variação de forma mais precisa, utilize um controle deslizante:</p>
+      <ol class="lista-ordenada-livre">
+        <li>Selecione a ferramenta <span class="font-strong">Controle deslizante</span> e clique no plano cartesiano;</li>
+        <li>Na janela exibida, defina o nome <span class="font-strong">t</span>, o tipo <span class="font-strong">número</span> e o intervalo: mínimo 0,5, máximo 1,5 e incremento 0,1;</li>
+        <li>Clique em OK;</li>
+        <li>No campo de entrada, digite <span class="font-strong">B = (x(A), t)</span> e pressione Enter;</li>
+        <li>Clique com o botão direito do mouse sobre o controle deslizante, abra Configurações e, em Legenda, escreva <span class="font-strong">Ângulo</span>;</li>
+        <li>Por fim, movimente o controle deslizante e observe a variação da inclinação da reta.</li>
+      </ol>
+      <div class="bloco-info bloco-info-observe">
+        <div class="bloco-info-icone">
+          <img src="assets/icone_box_observe.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="bloco-info-corpo">
+          <h4 class="bloco-info-titulo">Observe</h4>
+          <p>Observe o que acontece com as razões entre os lados do triângulo. Além disso, perceba que, ao alterar o ângulo, as razões também se modificam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2.4 SISTEMATIZANDO AS RELAÇÕES -->
+<section class="secao-container aula2-conteudo" id="aula2-topico4">
+  <div class="section-conteudo secao-corpo secao-lilas">
+    <div class="conteudo-interno">
+      <h3 class="secao-subtitulo-pequeno">2.4 Sistematizando as relações</h3>
+      <p>As razões entre os lados de um triângulo retângulo dependem do ângulo considerado. Essas relações recebem nomes específicos na trigonometria:</p>
+      <figure class="secao-figura">
+        <div class="secao-figura-moldura">
+          <div class="carrossel-container" data-carrossel-id="aula2-carrossel-sistematizacao"></div>
+          <div class="carrossel-footer">
+            <figcaption class="carrossel-legenda"></figcaption>
+            <div class="carrossel-bolinhas" data-carrossel-bolinhas></div>
+          </div>
+        </div>
+      </figure>
+      <p>Atenção: antes de finalizar, salve sua construção no GeoGebra com o nome <span class="font-strong">Relações no Triângulo Retângulo</span>.</p>
+      <div class="bloco-info bloco-info-professor">
+        <div class="bloco-info-icone">
+          <img src="assets/icone_box_professor.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="bloco-info-corpo">
+          <h4 class="bloco-info-titulo">Para o professor</h4>
+          <p>Nesta aula, a formalização das razões trigonométricas ocorre após a investigação, permitindo que os estudantes construam significado para os conceitos antes da apresentação dos nomes formais.</p>
+          <p>Incentive os estudantes a relacionar as observações realizadas com as definições apresentadas, destacando que essas relações dependem do ângulo e não do tamanho do triângulo.</p>
+          <p>Finalizamos aqui o nosso aprendizado desta aula. Você pode explorar esta construção interativa no GeoGebra: <a class="link-textos font-strong" href="https://www.geogebra.org/calculator/xj6jq8su" target="_blank" rel="noopener noreferrer">https://www.geogebra.org/calculator/xj6jq8su</a>.</p>
+        </div>
+      </div>
+      <p>Esperamos que até aqui você tenha conseguido:</p>
+      <p>
+        <span class="font-strong">✔</span> Construir triângulos retângulos no GeoGebra;<br>
+        <span class="font-strong">✔</span> Medir segmentos e comparar relações;<br>
+        <span class="font-strong">✔</span> Investigar a variação dessas relações;<br>
+        <span class="font-strong">✔</span> Perceber que essas relações dependem do ângulo; e<br>
+        <span class="font-strong">✔</span> Conhecer as definições de seno, cosseno e tangente.
+      </p>
+      <p>Atenção: as relações trigonométricas estudadas nesta aula serão fundamentais para o estudo das funções trigonométricas nas próximas atividades.</p>
+      <div class="secao-navegacao">
+        <a href="#" class="btn-proximo" data-aula="aula-3">Próximo</a>
+      </div>
+    </div>
+  </div>
 </section>

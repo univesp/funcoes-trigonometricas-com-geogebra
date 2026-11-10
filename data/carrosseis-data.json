@@ -158,5 +158,131 @@
         "legenda": "<span class='font-strong'>3.</span> <span class='font-strong'>Transformações:</span> incluem rotações, ampliações e reduções."
       }
     ]
+  },
+  {
+    "carrosselId": "aula2-video-construcao",
+    "showIndicators": false,
+    "items": [
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_01.mov",
+        "alt": "Vídeo 01_01: criação dos pontos e ajuste da visualização",
+        "legenda": "No campo de entrada, digite O = (0, 0) e A = (1, 0). Utilize a ferramenta <span class='font-strong'>Zoom</span> + até obter uma visualização adequada. Clique com o botão direito do mouse no plano cartesiano e, em seguida, em <span class='font-strong'>Exibir Eixos</span> e <span class='font-strong'>Exibir Malha</span> para ocultá-los."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_02.mov",
+        "alt": "Vídeo 01_02: construção do segmento OA",
+        "legenda": "Com a ferramenta <span class='font-strong'>Segmento</span>, construa o segmento \\(\\overline{AO}\\)."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_03.mov",
+        "alt": "Vídeo 01_03: construção da reta perpendicular",
+        "legenda": "Com a ferramenta <span class='font-strong'>Reta Perpendicular</span>, construa uma reta perpendicular ao segmento \\(\\overline{AO}\\), passando pelo ponto <i>A</i>."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_04.mp4",
+        "alt": "Vídeo 01_04: criação do ponto B com a ferramenta Ponto",
+        "legenda": "Em seguida, com a ferramenta <span class='font-strong'>Ponto</span>, crie o ponto <i>B</i> sobre essa reta, acima do segmento \\(\\overline{AO}\\)."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_05.mov",
+        "alt": "Vídeo 01_05: ocultação da reta perpendicular",
+        "legenda": "Depoois esconda a reta perpendicular, vá em Configurações e desative a opção Exibir Objeto."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_06.mov",
+        "alt": "Vídeo 01_06: construção dos segmentos OB e AB",
+        "legenda": "Com a ferramenta <span class='font-strong'>Segmento</span>, construa os segmentos \\(\\overline{OB}\\) e \\(\\overline{AB}\\)."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_07.mov",
+        "alt": "Vídeo 01_07: construção dos ângulos α e β",
+        "legenda": "Com a ferramenta <span class='font-strong'>Ângulo</span>, construa os ângulos \\(\\angle AOB\\) e \\(\\angle BAO\\)."
+      },
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video01_08.mov",
+        "alt": "Vídeo 01_08: exibição dos nomes dos ângulos",
+        "legenda": "Clique com o botão direito do mouse sobre os ângulos α e β, vá em <span class='font-strong'>Configurações</span> e, no campo <span class='font-strong'>Rótulo</span>, selecione a opção Nome."
+      }
+    ]
+  },
+  {
+    "carrosselId": "aula2-carrossel-identificacao",
+    "items": [
+      {
+        "src": "assets/aula2/Aula02_imagem02_01.png",
+        "alt": "Representação via GeoGebra do triângulo com os lados identificados",
+        "legenda": "Representação via GeoGebra"
+      },
+      {
+        "src": "assets/aula2/Aula02_imagem02_02.png",
+        "alt": "Representação didática do triângulo com os lados identificados",
+        "legenda": "Representação didática"
+      }
+    ]
+  },
+  {
+    "carrosselId": "aula2-carrossel-relacoes",
+    "items": [
+      {
+        "src": "assets/aula2/Aula02_imagem03_01.png",
+        "alt": "Representação via GeoGebra das razões entre os lados",
+        "legenda": "Representação via GeoGebra"
+      },
+      {
+        "src": "assets/aula2/Aula02_imagem03_02.png",
+        "alt": "Representação didática das razões entre os lados",
+        "legenda": "Representação didática"
+      }
+    ]
+  },
+  {
+    "carrosselId": "aula2-video-investigacao-1",
+    "items": [
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video02.mov",
+        "alt": "Vídeo 02: variação do tamanho do triângulo",
+        "legenda": "Investigação 1: variação do tamanho do triângulo."
+      }
+    ]
+  },
+  {
+    "carrosselId": "aula2-video-investigacao-2",
+    "items": [
+      {
+        "type": "video",
+        "src": "assets/aula2/Aula02_video03.mov",
+        "alt": "Vídeo 03: variação do ângulo",
+        "legenda": "Investigação 2: variação do ângulo."
+      }
+    ]
+  },
+  {
+    "carrosselId": "aula2-carrossel-sistematizacao",
+    "items": [
+      {
+        "src": "assets/aula2/Aula02_imagem04_01.png",
+        "alt": "Representação da definição de seno",
+        "legenda": "<span class='termo-seno'>seno:</span> razão entre o <span class='termo-oposto'>cateto oposto</span> e a <span class='termo-hipotenusa'>hipotenusa</span>."
+      },
+      {
+        "src": "assets/aula2/Aula02_imagem04_02.png",
+        "alt": "Representação da definição de cosseno",
+        "legenda": "<span class='termo-cosseno'>cosseno:</span> razão entre o <span class='termo-adjacente'>cateto adjacente</span> e a <span class='termo-hipotenusa'>hipotenusa</span>."
+      },
+      {
+        "src": "assets/aula2/Aula02_imagem04_03.png",
+        "alt": "Representação da definição de tangente",
+        "legenda": "<span class='termo-tangente'>tangente:</span> razão entre o <span class='termo-oposto'>cateto oposto</span> e o <span class='termo-adjacente'>cateto adjacente</span>."
+      }
+    ]
   }
 ]

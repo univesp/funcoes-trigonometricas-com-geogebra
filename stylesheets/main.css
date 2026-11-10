@@ -21,9 +21,14 @@ a {
   font-family: 'Rubik', sans-serif;
   padding-left: 20px;
   font-size: 16px;
+  max-width: 820px;
 }
 .lista-ordenada-livre li::marker {
   font-weight: bolder;
+}
+
+#figcaption-longo {
+  max-width: 97% !important;
 }
 
 .container {
@@ -366,6 +371,33 @@ a {
   transition: opacity 0.2s ease-in-out;
 }
 
+
+/* ---------- BARRA DE PROGRESSO DO VÍDEO ---------- */
+.carrossel-video-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carrossel-barra-container {
+  width: 100%;
+  height: 6px; /* Espessura da barrinha */
+  background-color: rgba(0, 0, 0, 0.1); /* Fundo cinza claro */
+  border-radius: 0 0 5px 5px; /* Arredonda os cantos de baixo */
+  overflow: hidden;
+  margin-top: 2px; /* Joga a barra colando na imagem */
+  z-index: 10;
+  position: relative;
+}
+
+.carrossel-barra-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #3F1464;
+  transition: width 0.5s linear; /* Deixa o movimento suave */
+}
+
 /* ---------- BLOCOS DE INFORMAÇÃO (ícone + barra lateral) ---------- */
 
 .bloco-info {
@@ -472,6 +504,92 @@ a {
 
 .bloco-info-professor {
   --bloco-cor: #145964;
+}
+
+.bloco-destaque-simples {
+  position: relative;
+  max-width: 820px;
+  margin: 32px 0;
+  padding: 18px 24px;
+  background-color: #FBFBF9;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+}
+
+.bloco-destaque-simples::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  border-radius: 0 4px 4px 0;
+  background-color: #3F1464;
+}
+
+.bloco-destaque-simples p {
+  margin: 0;
+}
+
+.formula-box {
+  box-sizing: border-box;
+  max-width: 820px;
+  min-height: 48px;
+  margin: 0 0 16px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  background-color: #E0E0E0;
+  border-radius: 4px;
+}
+
+.formula-box code {
+  color: #301517;
+  white-space: nowrap;
+}
+
+.formula-box math {
+  margin: 0;
+}
+
+.formula-box .MJXc-display {
+  margin: 0 auto !important;
+}
+
+.termo-oposto,
+.termo-adjacente,
+.termo-hipotenusa,
+.termo-seno,
+.termo-cosseno,
+.termo-tangente {
+  padding: 0 2px;
+  font-weight: 700;
+}
+
+.termo-oposto {
+  background-color: #F8DEC1;
+}
+
+.termo-adjacente {
+  background-color: #CCF1FB;
+}
+
+.termo-hipotenusa {
+  background-color: #EFC1F8;
+}
+
+.termo-seno {
+  background-color: #D7D3FF;
+}
+
+.termo-cosseno {
+  background-color: #FCC6C6;
+}
+
+.termo-tangente {
+  background-color: #C5F7BF;
 }
 
 /* ---------- BOTÃO DE NAVEGAÇÃO ENTRE SEÇÕES/AULAS ---------- */
